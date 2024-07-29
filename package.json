@@ -1,0 +1,46 @@
+{
+  "name": "kirby",
+  "version": "0.0.1",
+  "description": "A simple yet powerful 24/7 music bot for Discord, providing nonstop music streaming",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "pm2": "npx pm2 start index.js --name kirby -- --color && npx pm2 logs",
+    "pm2:default": "pm2 start index.js --name kirby -- --color && pm2 logs",
+    "update:all": "corepack use pnpm@latest && pnpm install && pnpm update"
+  },
+  "author": "MrTechnic",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@discord-player/extractor": "4.4.7",
+    "discord-player": "6.6.10",
+    "discord-player-deezer": "^1.0.1",
+    "discord-player-youtubei": "^1.2.0",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "ioredis": "^5.4.1",
+    "mediaplex": "^0.0.9",
+    "pino": "^9.3.2"
+  },
+  "optionalDependencies": {
+    "pino-pretty": "^11.2.2",
+    "pm2": "^5.4.2"
+  },
+  "devDependencies": {
+    "eslint": "8.57.0",
+    "nodemon": "^3.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrTechnic94/Kirby"
+  },
+  "bugs": {
+    "url": "https://github.com/MrTechnic94/Kirby/issues"
+  },
+  "homepage": "https://github.com/MrTechnic94/Kirby#readme",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+}
