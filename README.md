@@ -20,33 +20,54 @@ Kirby is a simple yet powerful 24/7 music bot for Discord, offering continuous m
 1. Install [Node.js](https://nodejs.org/), [Pnpm](https://pnpm.io/), and [FFmpeg](https://ffmpeg.org/) (or use `pnpm add ffmpeg-static` as an alternative).
 2. Clone this repository:
 
+<<<<<<< HEAD
     ```
     git clone https://github.com/MrTechnic94/Kirby.git
+=======
+    ```bash
+    git clone https://github.com/your_username/kirby-bot.git
+>>>>>>> 6d8fa3b43ceaa436752870bdca11d484357fdd16
     cd kirby-bot
     ```
 
 3. Update dependencies:
 
+<<<<<<< HEAD
     ```
+=======
+    ```bash
+>>>>>>> 6d8fa3b43ceaa436752870bdca11d484357fdd16
     pnpm update:all
     ```
 
 4. Open the `.env` file and configure the database, bot token, and other required settings.
 5. Start the bot using:
 
+<<<<<<< HEAD
     ```
+=======
+    ```bash
+>>>>>>> 6d8fa3b43ceaa436752870bdca11d484357fdd16
     pnpm start
     ```
 
     or if you prefer using `pm2` for process management:
 
+<<<<<<< HEAD
     ```
+=======
+    ```bash
+>>>>>>> 6d8fa3b43ceaa436752870bdca11d484357fdd16
     pnpm pm2
     ```
 
 6. Explore all available bot commands with:
 
+<<<<<<< HEAD
     ```
+=======
+    ```bash
+>>>>>>> 6d8fa3b43ceaa436752870bdca11d484357fdd16
     k!help
     ```
 
