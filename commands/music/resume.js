@@ -22,6 +22,5 @@ module.exports = {
 
         queue.node.resume();
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.pausebutton} **Song playback was \`resumed\`**` })] });
-        // return message.channel.send({ embeds: [errorEmbeds.resume_success] });
     },
 };

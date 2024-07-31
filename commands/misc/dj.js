@@ -12,7 +12,6 @@ module.exports = {
   cooldown: 2,
   async run(_client, message, args) {
     const guildData = await redis.hgetall(message.guild.id);
-    // const roleName = args.join(' ');
     const role = message.mentions.roles?.first() || message.guild.roles.cache.find((r) => r.name === args[0]) || message.guild.roles.cache.get(args[0]);
 
     switch (args[0]) {

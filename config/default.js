@@ -17,30 +17,13 @@ module.exports.clientOptions = {
     ],
     makeCache: Options.cacheWithLimits({
         ...Options.DefaultMakeCacheSettings,
-        AutoModerationRuleManager: 0,
-        ApplicationCommandManager: 0,
-        BaseGuildEmojiManager: 0,
-        DMMessageManager: 0,
-        GuildEmojiManager: 0,
-        GuildMemberManager: 10,
-        GuildBanManager: 0,
-        GuildForumThreadManager: 0,
-        GuildInviteManager: 0,
-        GuildMessageManager: 0,
-        GuildScheduledEventManager: 0,
-        GuildStickerManager: 0,
-        GuildTextThreadManager: 0,
         MessageManager: 10,
+        ThreadManager: 0,
         PresenceManager: 0,
         ReactionManager: 0,
-        ReactionUserManager: 0,
-        StageInstanceManager: 0,
-        ThreadManager: 0,
-        ThreadMemberManager: 0,
-        UserManager: 10,
         VoiceStateManager: 10,
         GuildMemberManager: {
-            maxSize: 20,
+            maxSize: 50,
             keepOverLimit: member => member.id === member.client.user.id
         }
     }),
@@ -73,7 +56,6 @@ module.exports.clientPlayerOptions = {
     useLegacyFFmpeg: false,
     skipFFmpeg: true,
     maxFiltersEnabled: 1
-    // audioQuality: 'highestaudio'
 };
 
 // Other discord-player player settings
@@ -88,13 +70,6 @@ module.exports.otherPlayerOptions = {
 
 // Emoji settings
 module.exports.emoji = {
-    // crossmark: '<:crossmark:1261606785974931527>',
-    // checkmark: '<:checkmark:1261606784838275113>',
-    // kirbyhi: '<a:kirbyhi:1261371504726114346>',
-    // kirbyflying: '<a:kirbyflying:1261608842094051380>',
-    // info: '<:info:1261992127756374016>',
-    // managment: '<:managment:1262057371740668005>',
-    // slash: '<:slash:1262060586251059272>'
     kirbyhi: '<a:kirbyhi:1263769697426604124>',
     kirbyflying: '<a:kirbyflying:1263769706775707702>',
     crossmark: '\`❌\`',
@@ -120,7 +95,8 @@ module.exports.emoji = {
     rewind: '\`⏪\`',
     forward: '\`⏩\`',
     nextsong: '\`⏭️\`',
-    question: '\`❓\`'
+    question: '\`❓\`',
+    feather: '\`🪶\`'
 };
 
 // Other settings

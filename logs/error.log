@@ -11,3 +11,6 @@
 {"level":50,"time":1721919239225,"pid":4532,"hostname":"MrTechnic","msg":"Error connecting to database\nError: getaddrinfo ENOTFOUND 10w7.150.34.106"}
 {"level":50,"time":1721919244341,"pid":13096,"hostname":"MrTechnic","msg":"Error connecting to database\nError: getaddrinfo ENOTFOUND 10w7.150.34.106"}
 {"level":50,"time":1722189514427,"pid":12568,"hostname":"MrTechnic","msg":"Error connecting to database\nError: connect ECONNREFUSED 127.0.0.1:6379"}
+{"level":50,"time":1722283580730,"pid":2292,"hostname":"MrTechnic","err":{"type":"Error","message":"ReferenceError: tokwen is not defined","stack":"Error: ReferenceError: tokwen is not defined\n    at C:\\Users\\techn\\Desktop\\kirby-bot\\index.js:77:9"},"msg":"ReferenceError: tokwen is not defined"}
+{"level":50,"time":1722369690370,"pid":13852,"hostname":"MrTechnic","msg":"An error occurred while running command filters!\nError: Received one or more errors"}
+{"level":50,"time":1722436075461,"pid":10968,"hostname":"MrTechnic","msg":"An error occurred while running command filters!\nError: Received one or more errors"}

@@ -1,6 +1,6 @@
 {
   "name": "kirby",
-  "version": "0.0.1",
+  "version": "1.1",
   "description": "A simple yet powerful 24/7 music bot for Discord, providing nonstop music streaming",
   "main": "index.js",
   "scripts": {
@@ -13,10 +13,10 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@discord-player/extractor": "4.4.7",
-    "discord-player": "6.6.10",
-    "discord-player-deezer": "^1.0.1",
-    "discord-player-youtubei": "^1.2.0",
+    "@discord-player/extractor": "^4.5.0",
+    "axios": "^1.7.2",
+    "discord-player": "^6.7.1",
+    "discord-player-youtubei": "^1.2.1",
     "discord.js": "^14.15.3",
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
@@ -40,7 +40,8 @@
   },
   "homepage": "https://github.com/MrTechnic94/Kirby#readme",
   "engines": {
-    "node": ">=18.x"
+    "node": ">=18.x",
+    "pnpm": ">=9.4.0"
   },
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
 }

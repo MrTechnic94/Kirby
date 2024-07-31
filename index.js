@@ -18,8 +18,7 @@ const { clientOptions, clientPlayerOptions } = require('./config/default');
 const { errorCatcher } = require('./utils/errorCatcher');
 const { Client, Collection } = require('discord.js');
 const { Player } = require('discord-player');
-const { default: DeezerExtractor } = require('discord-player-deezer');
-const { YoutubeiExtractor } = require("discord-player-youtubei");
+const { YoutubeiExtractor } = require('discord-player-youtubei');
 require('dotenv').config({ path: './config/.env' });
 
 // Allows capturing errors and checking presence of required parameters
@@ -32,18 +31,10 @@ const client = new Client(clientOptions);
 const player = new Player(client, {
 	useLegacyFFmpeg: clientPlayerOptions.useLegacyFFmpeg,
 	skipFFmpeg: clientPlayerOptions.skipFFmpeg
-	// ytdlOptions: {
-	// 	quality: playerOptions.audioQuality,
-	// 	highWaterMark: 1 << 25
-	// }
 });
 
 // Setting flag indicating whether developer mode is enabled
-// const isDev = process.env.DEV_MODE === 'true';
 global.isDev = process.env.DEV_MODE === 'true';
-
-// List of extractors to load
-// const extractors = global.isDev ? null : ext => ext !== 'YouTubeExtractor';
 
 // Bot token
 const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
@@ -55,14 +46,9 @@ const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
 (async () => {
 	try {
 		// Loading extractors for discord-player
-		await player.extractors.register(DeezerExtractor);
 		await player.extractors.register(YoutubeiExtractor, {
 			authentication: process.env.YT_AUTHENTICATION
 		});
-		// await player.extractors.register(SpotifyExtractor, {
-		// 	createStream: createYoutubeiStream
-		// });
-		// await player.extractors.loadDefault((ext) => !['YouTubeExtractor', 'SpotifyExtractor'].includes(ext));
 		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor')
 		logger.info('All extractors loaded');
 

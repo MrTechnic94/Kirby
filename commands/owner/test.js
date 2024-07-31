@@ -1,6 +1,5 @@
 'use strict';
 
-// const emoji = require('../../utils/emoji');
 const logger = require('../../utils/consoleLogger');
 const { emoji } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');

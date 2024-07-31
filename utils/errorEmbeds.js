@@ -1,6 +1,5 @@
 'use strict';
 
-// const emoji = require('./emoji');
 const { createEmbed } = require('./embedCreator');
 const { embedOptions, otherPlayerOptions, emoji } = require('../config/default');
 
@@ -47,16 +46,6 @@ const messages = {
     no_lyrics_args_error: 'Provide song name or start playing it',
     resumed_error: 'Player is not paused',
     paused_error: 'Player is already paused'
-    // send_dm_success: '✅ Check your private messages',
-    // remove_dj_success: '✅ DJ role removed',
-    // restart_bot_success: '✅ Restarting the bot...',
-    // skip_success: '⏩ Skipped the current song',
-    // shuffle_success: '🔀 The playlist has been shuffled',
-    // track_back_success: '◀️ Playing the previous song',
-    // clear_success: '💨 The playlist has been cleared',
-    // disabled_filters_success: '🎵 All filters have been disabled',
-    // resume_success: '⏸️ `Resumed` song playback',
-    // pause_success: '▶️ `Paused` song playback'
 };
 
 // Generating messages

@@ -1,6 +1,5 @@
 'use strict';
 
-// const emoji = require('../../utils/emoji');
 const redis = require('../../utils/redis');
 const logger = require('../../utils/consoleLogger');
 const errorEmbeds = require('../../utils/errorEmbeds');
@@ -58,7 +57,6 @@ module.exports = {
 		}
 
 		const args = message.content.slice(prefix.length).split(/ +/);
-		// const command = args.shift().toLowerCase();
 		const command = args.shift();
 		const cmd = client.commands.get(command) ?? client.commands.get(client.aliases.get(command));
 
@@ -66,8 +64,9 @@ module.exports = {
 		if (!cmd) return;
 
 		// Checking if command has a cooldown
+		const now = Date.now();
 		if (cmd.cooldown && cooldowns.has(cmd.name)) {
-			const remainingTime = cooldowns.get(cmd.name) - Date.now();
+			const remainingTime = cooldowns.get(cmd.name) - now;
 
 			if (remainingTime > 0) {
 				const shortenedTime = (remainingTime / 1000).toFixed(1);
@@ -77,7 +76,7 @@ module.exports = {
 
 		// Setting a new cooldown expiration time
 		const cooldownTime = cmd.cooldown * 1000;
-		const newExpirationTime = Date.now() + cooldownTime;
+		const newExpirationTime = now + cooldownTime;
 		cooldowns.set(cmd.name, newExpirationTime);
 		setTimeout(() => cooldowns.delete(cmd.name), cooldownTime);
 

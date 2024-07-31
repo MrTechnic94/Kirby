@@ -27,7 +27,6 @@ module.exports = {
         };
 
         const createQueueEmbed = () => createEmbed({
-            // title: '📰 Piosenki w playliście',
             description: `### ${emoji.info} Songs in playlist\n**Currently:**\n[${queue.currentTrack.cleanTitle}](${queue.currentTrack.url}) [${queue.currentTrack.duration}]\n\n**Next:**\n${queue.tracks.size === 0 ? 'No songs' : tracks.slice(page * 20, (page + 1) * 20).join('\n')}`,
             footer: {
                 text: getFooterText()

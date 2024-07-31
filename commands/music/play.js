@@ -1,6 +1,5 @@
 'use strict';
 
-// const emoji = require('../../utils/emoji');
 const logger = require('../../utils/consoleLogger');
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { otherPlayerOptions, emoji } = require('../../config/default');
@@ -26,7 +25,8 @@ module.exports = {
         const player = useMainPlayer();
 
         const result = await player.search(args.join(' '), {
-            requestedBy: message.member
+            requestedBy: message.member,
+            fallbackSearchEngine: 'spotifySearch'
         });
 
         if (!result.hasTracks()) return message.channel.send({ embeds: [errorEmbeds.track_error] });

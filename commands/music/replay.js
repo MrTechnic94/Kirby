@@ -29,6 +29,5 @@ module.exports = {
 
         queue.insertTrack(result.tracks[0], 0);
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **Added \`${result.tracks[0].cleanTitle}\` to playlist**` })] });
-        // return message.channel.send({ embeds: [createEmbed({ description: `✅ **Dodano \`${result.tracks[0].cleanTitle}\` do playlisty**` })] });
     },
 };

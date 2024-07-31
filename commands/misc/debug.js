@@ -20,8 +20,6 @@ module.exports = {
         message.channel.send({
             embeds: [
                 createEmbed({
-                    // title: '⌚ Informacje bota',
-                    // description: `### ${emoji.disk} Debug\n**Ping: \`${Date.now() - message.createdTimestamp}ms\`**\n**Uptime: \`${formattedTime}\`**\n**System: \`${system}\`**\n**Cpu usage: \`${cpuUsage}%\`**\n**Ram usage: \`${memUsage}mb\`**\n**Active connections: \`${player.generateStatistics().queues.length}\`**`
                     description: `### ${emoji.disk} Debug\nShard ${message.guild.shardId}\n\`\`\`Ping :: ${ping}ms\nUptime :: ${formattedTime}\nSystem :: ${system}\nCpu usage :: ${cpuUsage}%\nRam usage :: ${memUsage}mb\nGuids count :: ${client.guilds.cache.size}\nActive connections :: ${player.generateStatistics().queues.length}\`\`\``
                 }),
             ],

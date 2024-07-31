@@ -18,7 +18,6 @@ module.exports = {
         if (!queue?.isPlaying() || !queue.tracks.at(0)) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
         queue.tracks.clear();
-        // return message.channel.send({ embeds: [errorEmbeds.clear_success] });
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.dash} **Playlist has been cleared**` })] });
     },
 };

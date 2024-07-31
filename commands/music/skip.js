@@ -31,7 +31,6 @@ module.exports = {
             queue.node.skip();
             queue.votes = [];
             return message.channel.send({ embeds: [createEmbed({ description: `${emoji.nextsong} **Skipped current song**` })] });
-            // return message.channel.send({ embeds: [errorEmbeds.skip_success] });
         }
 
         message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nYou voted to skip this song (${currentVotes} / ${required})**` })] });

@@ -20,7 +20,6 @@ module.exports = {
             case 'clear':
                 if (!queue.filters.ffmpeg.isEnabled('normalizer')) return message.channel.send({ embeds: [errorEmbeds.filters_error] });
                 await queue.filters.ffmpeg.setFilters(false);
-                // return message.channel.send({ embeds: [errorEmbeds.disabled_filters_success] });
                 return message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nAll filters have been disabled` })] });
         }
 
@@ -46,7 +45,6 @@ module.exports = {
         message.channel.send({
             embeds: [
                 createEmbed({
-                    // title: '📰 Lista filtrów',
                     description: `### ${emoji.info} Filters list\n${embedFields.join('\n')}`,
                     footer: {
                         text: `Example usage: ${prefix}bassboost`

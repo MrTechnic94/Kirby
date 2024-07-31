@@ -47,7 +47,8 @@ module.exports = {
                 { name: 'dj <role>', description: 'Sets DJ role on server' },
                 { name: 'dj <remove>', description: 'Removes DJ role' },
                 { name: 'settings', description: 'Displays current server settings' },
-                { name: 'trackannounce <on | off>', description: 'Toggles track announcements' }
+                { name: 'trackannounce <on | off>', description: 'Toggles track announcements' },
+                { name: 'quote', description: 'Random Bible quote' }
             ]
         };
 

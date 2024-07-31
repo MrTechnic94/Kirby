@@ -20,6 +20,5 @@ module.exports = {
 
         queue.tracks.shuffle();
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.twistedarrows} **Playlist has been shuffled**` })] });
-        // return message.channel.send({ embeds: [errorEmbeds.shuffle_success] });
     },
 };

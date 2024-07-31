@@ -22,7 +22,6 @@ module.exports = {
         message.channel.send({
             embeds: [
                 createEmbed({
-                    // title: '⚡ Teraz odtwarzam',
                     description: `### ${emoji.zap} Now playing\n**Title: [${queue.currentTrack.cleanTitle}](${queue.currentTrack.url})**\n**Author: \`${author}\`**\n**Volume: \`${queue.node.volume}%\`**\n**Requested by:** ${requester}\n\n${status} | ${progressbar} ${queue.node.getTimestamp().current.label} / ${queue.currentTrack.duration}`,
                     thumbnail: queue.currentTrack.thumbnail
                 }),

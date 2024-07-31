@@ -18,7 +18,6 @@ module.exports = {
         if (!queue.history.previousTrack) return message.channel.send({ embeds: [errorEmbeds.track_back_error] });
 
         await queue.history.back();
-        // return message.channel.send({ embeds: [errorEmbeds.track_back_success] });
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.rewind} **Playing previous song**` })] });
     },
 };

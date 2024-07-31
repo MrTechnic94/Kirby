@@ -18,7 +18,6 @@ module.exports = {
         if (!queue?.isPlaying() || queue.repeatMode === QueueRepeatMode.OFF && !queue.tracks.at(0)) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
         queue.node.skip();
-        // return message.channel.send({ embeds: [errorEmbeds.skip_success] });
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.nextsong} **Skipped current song**` })] });
     },
 };

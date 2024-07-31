@@ -16,14 +16,11 @@ module.exports = {
 
         if (!searchQuery) return message.channel.send({ embeds: [errorEmbeds.no_lyrics_args_error] });
 
-        const lyricsFinder = lyricsExtractor(process.env.LYRICS_API);
-
-        // const msg = await message.channel.send('🔎 **Wyszukuje tekst piosenki...**');
+        const lyricsFinder = lyricsExtractor(process.env.LYRICS_API_KEY);
 
         const lyrics = await lyricsFinder.search(searchQuery).catch(() => null);
 
         if (!lyrics) return message.channel.send({ embeds: [errorEmbeds.no_found_lyrics_error] });
-        // msg.delete();
 
         const embeds = [];
         let trimmedLyrics = lyrics.lyrics;
@@ -31,7 +28,6 @@ module.exports = {
 
         while (trimmedLyrics.length > 0) {
             const embed = createEmbed({
-                // title: isFirstEmbed ? `🎵 ${lyrics.artist.name} - ${lyrics.title}` : undefined,
                 description: `${isFirstEmbed ? `### ${emoji.largebluediamond} ${lyrics.artist.name} - ${lyrics.title}` : ''}\n${trimmedLyrics.slice(0, 1997)}`
             });
             embeds.push(embed);
@@ -39,7 +35,6 @@ module.exports = {
             isFirstEmbed = false;
         }
 
-        // msg.delete();
         await message.channel.send({ embeds });
     },
 };
