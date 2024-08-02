@@ -32,8 +32,7 @@ module.exports = {
         if (!result.hasTracks()) return message.channel.send({ embeds: [errorEmbeds.track_error] });
 
         try {
-            message.channel.send({ embeds: [createEmbed({ description: result.hasTracks() ? `${emoji.checkmark} **Added \`${result.tracks[0].cleanTitle}\` to playlist**` : `${emoji.checkmark} **Added \`${result.tracks.length}\` tracks from \`${result.playlist.cleanTitle}\`**` })] });
-
+            message.channel.send({ embeds: [createEmbed({ description: result.hasPlaylist() ? `${emoji.checkmark} **Added \`${result.tracks.length}\` tracks from \`${result.playlist.title}\`**` : `${emoji.checkmark} **Added \`${result.tracks[0].cleanTitle}\` to playlist**` })] });
             await player.play(message.member.voice.channel, result, {
                 nodeOptions: {
                     metadata: message.channel,

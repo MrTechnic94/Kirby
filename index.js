@@ -47,9 +47,12 @@ const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
 	try {
 		// Loading extractors for discord-player
 		await player.extractors.register(YoutubeiExtractor, {
-			authentication: process.env.YT_AUTHENTICATION
+			authentication: process.env.YT_AUTHENTICATION,
+			streamOptions: {
+				useClient: 'ANDROID'
+			}
 		});
-		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor')
+		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor');
 		logger.info('All extractors loaded');
 
 		// Logging bot into Discord

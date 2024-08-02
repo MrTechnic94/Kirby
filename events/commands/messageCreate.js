@@ -36,7 +36,7 @@ module.exports = {
 
 		if (missingPermissions.length > 0) {
 			const missingPermissionNames = missingPermissions.map(permission => permission.label).join('\n');
-			return message.channel.send(`${emoji.crossmark} **I do not have  required permissions:\n\`\`\`${missingPermissionNames}\`\`\``).catch(() => null);
+			return message.channel.send(`${emoji.crossmark} **I do not have required permissions:\n\`\`\`${missingPermissionNames}\`\`\`**`).catch(() => null);
 		}
 
 		const guildData = await redis.hgetall(message.guild.id);
