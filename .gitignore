@@ -1,7 +1,7 @@
 config/.env.example
 config/.env
-node_modules
+node_modules/
 .eslintrc.json
 pnpm-lock.yaml
 README.md
-logs
+logs/

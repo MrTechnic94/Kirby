@@ -22,7 +22,7 @@ Kirby is a simple yet powerful 24/7 music bot for Discord, offering continuous m
 
     ```
     git clone https://github.com/MrTechnic94/Kirby.git
-    cd kirby-bot
+    cd Kirby
     ```
 
 3. Update dependencies:

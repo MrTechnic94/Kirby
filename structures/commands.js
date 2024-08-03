@@ -1,20 +1,20 @@
 'use strict';
 
 const logger = require('../utils/consoleLogger');
-const path = require('node:path');
+const { join } = require('node:path');
 const { readdirSync } = require('node:fs');
 
 module.exports = (client) => {
-  const commandsDir = path.join(__dirname, '../commands/');
+  const commandsDir = join(__dirname, '../commands/');
 
   readdirSync(commandsDir, { withFileTypes: true }).forEach((directory) => {
     if (!directory.isDirectory()) return;
 
-    const commandFiles = readdirSync(path.join(commandsDir, directory.name))
+    const commandFiles = readdirSync(join(commandsDir, directory.name))
       .filter((file) => file.endsWith('.js'));
 
     for (const file of commandFiles) {
-      const command = require(path.join(commandsDir, directory.name, file));
+      const command = require(join(commandsDir, directory.name, file));
 
       // Checking if command loads correctly
       if (typeof command.run !== 'function') {
