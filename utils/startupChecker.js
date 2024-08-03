@@ -38,7 +38,7 @@ function checkFFmpeg() {
     }
 }
 
-function errorCatcher() {
+function startupChecker() {
     // Checking required environment variables
     checkEnvVariables(['TOKEN', 'OWNER_ID', 'PREFIX', 'DB_HOST', 'DB_PORT', 'DB_PASSWORD']);
 
@@ -52,4 +52,4 @@ function errorCatcher() {
     checkFFmpeg();
 }
 
-module.exports = { errorCatcher };
+module.exports = { startupChecker };
