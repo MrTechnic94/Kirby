@@ -21,6 +21,6 @@ module.exports = {
         if (queue.node.volume === 0) return message.channel.send({ embeds: [errorEmbeds.muted_player_error] });
 
         queue.node.pause();
-        message.channel.send({ embeds: [createEmbed({ description: `${emoji.arrowforward} **Song playback was \`paused\`**` })] });
+        message.channel.send({ embeds: [createEmbed({ description: `${emoji.forward} **Song playback was \`paused\`**` })] });
     },
 };
