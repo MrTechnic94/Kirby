@@ -16,7 +16,7 @@ function checkEnvVariables(variables) {
 
 // Checking if Node.js version is greater than v18
 function checkNodeVersion() {
-    const version = Number(process.version.slice(1).split('.')[0]);
+    const version = Number(process.versions.node.split('.')[0]);
     if (version < 18) {
         logger.error('Outdated Node.js version. Update to a newer version');
         process.exit(1);
