@@ -15,14 +15,14 @@
 
 const logger = require('./utils/consoleLogger');
 const { clientOptions, clientPlayerOptions } = require('./config/default');
-const { errorCatcher } = require('./utils/errorCatcher');
+const { startupChecker } = require('./utils/startupChecker');
 const { Client, Collection } = require('discord.js');
 const { Player } = require('discord-player');
 const { YoutubeiExtractor } = require('discord-player-youtubei');
 require('dotenv').config({ path: './config/.env' });
 
 // Allows capturing errors and checking presence of required parameters
-errorCatcher();
+startupChecker();
 
 // Initializing client with specified settings
 const client = new Client(clientOptions);
