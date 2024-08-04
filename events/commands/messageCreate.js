@@ -16,13 +16,11 @@ const botPermissions = [
 	{ name: PermissionsBitField.Flags.ReadMessageHistory, label: 'Read Message History' },
 	{ name: PermissionsBitField.Flags.SendMessagesInThreads, label: 'Send Messages In Threads' },
 	{ name: PermissionsBitField.Flags.Speak, label: 'Speak' },
-	// { name: PermissionsBitField.Flags.PrioritySpeaker, label: 'Priority Speaker' },
 	{ name: PermissionsBitField.Flags.Connect, label: 'Connect' },
-	// { name: PermissionsBitField.Flags.UseVAD, label: 'Use Voice Activity' },
+	{ name: PermissionsBitField.Flags.UseVAD, label: 'Use Voice Activity' },
 	{ name: PermissionsBitField.Flags.EmbedLinks, label: 'Embed Links' },
 	{ name: PermissionsBitField.Flags.ViewChannel, label: 'View Channel' },
-	{ name: PermissionsBitField.Flags.UseApplicationCommands, label: 'Use Application Commands' }
-	// { name: PermissionsBitField.Flags.AddReactions, label: 'Add Reactions' }
+	// { name: PermissionsBitField.Flags.UseApplicationCommands, label: 'Use Application Commands' }
 ];
 
 module.exports = {
