@@ -16,46 +16,15 @@ let logger;
 if (pinoPrettyAvailable) {
     logger = pino({
         transport: {
-            targets: [
-                {
-                    target: 'pino-pretty',
-                    level: 'info',
-                    options: {
-                        colorize: true,
-                        translateTime: 'SYS:HH:MM:ss'
-                    }
-                },
-                {
-                    target: 'pino/file',
-                    level: 'error',
-                    options: {
-                        destination: './logs/error.log',
-                        mkdir: true,
-                        sync: false
-                    }
-                }
-            ]
+            target: 'pino-pretty',
+            options: {
+                colorize: true,
+                translateTime: 'SYS:HH:MM:ss'
+            }
         }
     });
 } else {
-    logger = pino({
-        transport: {
-            targets: [
-                {
-                    target: 'pino/file'
-                },
-                {
-                    target: 'pino/file',
-                    level: 'error',
-                    options: {
-                        destination: './logs/error.log',
-                        mkdir: true,
-                        sync: false
-                    }
-                }
-            ]
-        }
-    });
+    logger = pino();
 }
 
 module.exports = logger;

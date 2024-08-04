@@ -19,7 +19,7 @@ const botPermissions = [
 	{ name: PermissionsBitField.Flags.Connect, label: 'Connect' },
 	{ name: PermissionsBitField.Flags.UseVAD, label: 'Use Voice Activity' },
 	{ name: PermissionsBitField.Flags.EmbedLinks, label: 'Embed Links' },
-	{ name: PermissionsBitField.Flags.ViewChannel, label: 'View Channel' },
+	{ name: PermissionsBitField.Flags.ViewChannel, label: 'View Channel' }
 	// { name: PermissionsBitField.Flags.UseApplicationCommands, label: 'Use Application Commands' }
 ];
 
