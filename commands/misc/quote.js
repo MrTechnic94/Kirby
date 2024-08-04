@@ -8,7 +8,7 @@ const { emoji } = require('../../config/default');
 module.exports = {
     name: 'quote',
     cooldown: 2,
-    async run(_client, message) {
+    async execute(_client, message) {
         try {
             const response = await axios.get('https://labs.bible.org/api/?passage=random&type=json');
             const quoteData = response.data[0];

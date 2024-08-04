@@ -9,7 +9,7 @@ module.exports = {
     name: 'cmd',
     ownerOnly: true,
     cooldown: 2,
-    async run(_client, message, args) {
+    async execute(_client, message, args) {
         if (!args.length) return message.channel.send({ embeds: [errorEmbeds.args_cmd_error] });
 
         exec(args.join(' '), (error, stdout) => {

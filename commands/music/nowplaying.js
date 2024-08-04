@@ -9,7 +9,7 @@ module.exports = {
     name: 'nowplaying',
     aliases: ['np'],
     cooldown: 2,
-    async run(_client, message) {
+    async execute(_client, message) {
         const queue = useQueue(message.guild.id);
 
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });

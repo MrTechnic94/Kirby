@@ -9,7 +9,7 @@ module.exports = {
     name: 'status',
     ownerOnly: true,
     cooldown: 2,
-    async run(client, message, args) {
+    async execute(client, message, args) {
         if (!args.length) return message.channel.send({ embeds: [errorEmbeds.args_status_error] });
 
         const query = args[0] === 'clear' ? 'Type k!help' : args.join(' ');

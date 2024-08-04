@@ -10,7 +10,7 @@ module.exports = {
     aliases: ['duplicate'],
     dj: true,
     cooldown: 2,
-    async run(_client, message) {
+    async execute(_client, message) {
         if (message.member?.voice.channelId !== message.guild.members.me?.voice.channelId) return message.channel.send({ embeds: [errorEmbeds.voice_error] });
 
         if (message.guild.members.me?.voice.mute) return message.channel.send({ embeds: [errorEmbeds.muted_bot_error] });

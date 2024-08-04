@@ -8,7 +8,7 @@ module.exports = {
     name: 'test',
     cooldown: 2,
     ownerOnly: true,
-    async run(_client, message) {
+    async execute(_client, message) {
         const embedData = {
             // url: 'https://example.com',
             // title: `${emoji.corssmark} Something is wrong!`,

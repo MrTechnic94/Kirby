@@ -6,7 +6,7 @@ const { createEmbed } = require('../../utils/embedCreator');
 
 module.exports = {
 	name: 'playerStart',
-	async run(_client, queue, track) {
+	async execute(_client, queue, track) {
 		const guildData = await redis.hgetall(queue.guild.id);
 
 		if (guildData?.trackAnnounce === 'false') return;

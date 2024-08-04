@@ -5,7 +5,7 @@ const errorEmbeds = require('../../utils/errorEmbeds');
 
 module.exports = {
 	name: 'playerError',
-	async run(_client, queue, err) {
+	async execute(_client, queue, err) {
 		logger.error(err);
 		queue.metadata.send({ embeds: [errorEmbeds.player_error] });
 	},

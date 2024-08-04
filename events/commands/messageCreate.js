@@ -25,7 +25,7 @@ const botPermissions = [
 
 module.exports = {
 	name: Events.MessageCreate,
-	async run(client, message) {
+	async execute(client, message) {
 		// Checking if command was executed in a guild and if command author is not a bot
 		if (message.author.bot || !message.guild) return;
 
@@ -90,9 +90,9 @@ module.exports = {
 
 		// Captures and displays command errors
 		try {
-			await cmd.run(client, message, args);
+			await cmd.execute(client, message, args);
 		} catch (err) {
-			logger.error(`An error occurred while running command ${cmd.name}!\n${err}`);
+			logger.error(`An error occurred while executing command ${cmd.name}!\n${err}`);
 		}
 	},
 };

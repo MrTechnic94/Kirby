@@ -11,7 +11,7 @@ module.exports = {
     aliases: ['p', 'songrequest', 'sr'],
     dj: true,
     cooldown: 2,
-    async run(_client, message, args) {
+    async execute(_client, message, args) {
         if (!args.length) return message.channel.send({ embeds: [errorEmbeds.track_error] });
 
         if (!message.member?.voice.channelId) return message.channel.send({ embeds: [errorEmbeds.member_voice_error] });

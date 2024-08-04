@@ -10,7 +10,7 @@ module.exports = {
     aliases: ['ka'],
     dj: true,
     cooldown: 2,
-    async run(_client, message) {
+    async execute(_client, message) {
         if (message.member?.voice.channelId !== message.guild.members.me?.voice.channelId) return message.channel.send({ embeds: [errorEmbeds.voice_error] });
 
         const queue = useQueue(message.guild.id);

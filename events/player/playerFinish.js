@@ -2,7 +2,7 @@
 
 module.exports = {
 	name: 'playerFinish',
-	async run(_client, queue) {
+	async execute(_client, queue) {
 		if (queue.npmessage?.editable) await queue.npmessage.delete().catch(() => null);
 	},
 };

@@ -9,7 +9,7 @@ module.exports = {
     name: 'restart',
     ownerOnly: true,
     cooldown: 2,
-    async run(_client, message) {
+    async execute(_client, message) {
         try {
             await message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nRestarting bot, please wait...` })] });
 

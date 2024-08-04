@@ -10,7 +10,7 @@ module.exports = {
     name: 'trackannounce',
     permission: PermissionsBitField.Flags.ManageMessages,
     cooldown: 2,
-    async run(_client, message, args) {
+    async execute(_client, message, args) {
         if (args[0] !== 'on' && args[0] !== 'off') return message.channel.send({ embeds: [errorEmbeds.args_settings_error] });
 
         const newSettings = args[0] === 'off' ? 'false' : 'true';

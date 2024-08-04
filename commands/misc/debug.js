@@ -9,7 +9,7 @@ const { emoji } = require('../../config/default');
 module.exports = {
     name: 'debug',
     cooldown: 2,
-    async run(client, message) {
+    async execute(client, message) {
         const player = useMainPlayer(message.guild.id);
         const formattedTime = formatTime(client.uptime);
         const system = os.platform();

@@ -9,7 +9,7 @@ const { emoji } = require('../../config/default');
 module.exports = {
     name: 'lyrics',
     cooldown: 2,
-    async run(_client, message, args) {
+    async execute(_client, message, args) {
         const queue = useQueue(message.guild.id);
 
         const searchQuery = args.join(' ') || (queue?.isPlaying() && queue.currentTrack.cleanTitle);

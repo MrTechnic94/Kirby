@@ -10,7 +10,7 @@ module.exports = {
     name: 'prefix',
     permission: PermissionsBitField.Flags.ManageMessages,
     cooldown: 2,
-    async run(_client, message, args) {
+    async execute(_client, message, args) {
         if (!args.length) return message.channel.send({ embeds: [errorEmbeds.prefix_change_error] });
 
         const prefix = args[0] === 'remove' ? process.env.PREFIX : args[0];

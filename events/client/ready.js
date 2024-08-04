@@ -7,7 +7,7 @@ const { Events } = require('discord.js');
 module.exports = {
 	name: Events.ClientReady,
 	once: true,
-	async run(client) {
+	async execute(client) {
 		// Displaying bot login information
 		logger.info(`Logged in as ${client.user.tag}`);
 

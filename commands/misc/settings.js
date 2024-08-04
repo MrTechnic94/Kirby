@@ -9,7 +9,7 @@ module.exports = {
     name: 'settings',
     aliases: ['config', 'cfg'],
     cooldown: 2,
-    async run(_client, message) {
+    async execute(_client, message) {
         const queue = useQueue(message.guild.id);
         const guildData = await redis.hgetall(message.guild.id);
         const prefix = guildData?.prefix ?? process.env.PREFIX;

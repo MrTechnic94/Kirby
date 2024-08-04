@@ -19,7 +19,7 @@ module.exports = (client) => {
       const event = require(join(eventsDir, directory.name, file));
       logger.info(`Event ${eventName} has been loaded`);
 
-      const eventHandler = (...args) => event.run(client, ...args);
+      const eventHandler = (...args) => event.execute(client, ...args);
       const player = useMainPlayer();
 
       switch (directory.name) {

@@ -17,7 +17,7 @@ module.exports = (client) => {
       const command = require(join(commandsDir, directory.name, file));
 
       // Checking if command loads correctly
-      if (typeof command.run !== 'function') {
+      if (typeof command.execute !== 'function') {
         logger.error(`Error while loading command: ${directory.name}/${file}`);
         process.exit(1);
       }

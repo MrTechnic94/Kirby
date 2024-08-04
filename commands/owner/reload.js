@@ -8,7 +8,7 @@ module.exports = {
     name: 'reload',
     ownerOnly: true,
     cooldown: 2,
-    async run(client, message, args) {
+    async execute(client, message, args) {
         const category = args[0];
         const command = args[1];
 
