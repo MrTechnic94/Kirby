@@ -95,7 +95,7 @@ module.exports.emoji = {
     forward: '\`⏩\`',
     nextsong: '\`⏭️\`',
     question: '\`❓\`',
-    feather: '\`🪶\`'
+    scroll: '\`📜\`'
 };
 
 // Other settings

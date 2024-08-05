@@ -16,7 +16,7 @@ module.exports = {
             message.channel.send({
                 embeds: [
                     createEmbed({
-                        description: `### ${emoji.feather} ${quoteData.bookname} ${quoteData.chapter}:${quoteData.verse}\n${quoteData.text}`
+                        description: `### ${emoji.scroll} ${quoteData.bookname} ${quoteData.chapter}:${quoteData.verse}\n${quoteData.text}`
                     }),
                 ],
             });
