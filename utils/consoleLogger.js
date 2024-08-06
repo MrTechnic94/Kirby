@@ -15,6 +15,7 @@ let logger;
 
 if (pinoPrettyAvailable) {
     logger = pino({
+        level: 'debug',
         transport: {
             target: 'pino-pretty',
             options: {
@@ -24,7 +25,9 @@ if (pinoPrettyAvailable) {
         }
     });
 } else {
-    logger = pino();
+    logger = pino({
+        level: 'debug'
+    });
 }
 
 module.exports = logger;
