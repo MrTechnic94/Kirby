@@ -11,7 +11,7 @@ function createEmbed({ description, fields = {}, thumbnail, footer = {}, color }
     if (fields.length) embed.addFields(fields.filter(field => field.name && field.value));
     if (thumbnail) embed.setThumbnail(thumbnail);
     if (footer.text ?? footer.iconURL) embed.setFooter(footer);
-    embed.setColor(color ?? (global.isDev ? embedOptions.devColor : embedOptions.defaultColor));
+    embed.setColor(color ?? embedOptions.defaultColor);
 
     return embed;
 }

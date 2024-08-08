@@ -29,7 +29,6 @@ const client = new Client(clientOptions);
 
 // Loading discord-player
 const player = new Player(client, {
-	useLegacyFFmpeg: clientPlayerOptions.useLegacyFFmpeg,
 	skipFFmpeg: clientPlayerOptions.skipFFmpeg
 });
 
@@ -47,10 +46,11 @@ const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
 	try {
 		// Loading extractors for discord-player
 		await player.extractors.register(YoutubeiExtractor, {
-			authentication: process.env.YT_AUTHENTICATION,
-			streamOptions: {
-				useClient: 'ANDROID'
-			}
+			access_token: process.env.YT_ACCESS_TOKEN,
+			refresh_token: process.env.YT_REFRESH_TOKEN,
+			scope: 'https://www.googleapis.com/auth/youtube-paid-content https://www.googleapis.com/auth/youtube',
+			token_type: 'Bearer',
+			expiry_date: '2024-08-09T09:07:10.320Z'
 		});
 		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor');
 		logger.info('All extractors loaded');

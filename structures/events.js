@@ -1,5 +1,6 @@
 'use strict';
 
+const redis = require('../utils/redis');
 const logger = require('../utils/consoleLogger');
 const { join } = require('node:path');
 const { readdirSync } = require('node:fs');
@@ -28,6 +29,9 @@ module.exports = (client) => {
           break;
         case 'process':
           process.on(eventName, eventHandler);
+          break;
+        case 'redis':
+          redis.on(eventName, eventHandler);
           break;
         default:
           client[event.once ? 'once' : 'on'](eventName, eventHandler);

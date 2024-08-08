@@ -53,7 +53,6 @@ module.exports.clientOptions = {
 
 // Discord-player client player settings 
 module.exports.clientPlayerOptions = {
-    useLegacyFFmpeg: false,
     skipFFmpeg: true,
     maxFiltersEnabled: 1
 };
@@ -101,6 +100,5 @@ module.exports.emoji = {
 // Other settings
 module.exports.embedOptions = {
     defaultColor: 0x6133FF,
-    errorColor: 0xED4245,
-    devColor: 0x6133FF
+    errorColor: 0xED4245
 };
