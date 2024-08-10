@@ -13,7 +13,7 @@ module.exports = {
         try {
             await message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nRestarting bot, please wait...` })] });
 
-            process.exit(1);
+            process.exit(0);
         } catch (err) {
             logger.error(err);
             message.channel.send({ embeds: [errorEmbeds.catch_error] });

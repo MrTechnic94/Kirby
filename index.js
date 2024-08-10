@@ -50,7 +50,10 @@ const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
 			refresh_token: process.env.YT_REFRESH_TOKEN,
 			scope: 'https://www.googleapis.com/auth/youtube-paid-content https://www.googleapis.com/auth/youtube',
 			token_type: 'Bearer',
-			expiry_date: '2024-08-09T09:07:10.320Z'
+			expiry_date: '2024-08-09T09:07:10.320Z',
+			streamOptions: {
+				highWaterMark: 2 * 1024 * 1024
+			}
 		});
 		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor');
 		logger.info('All extractors loaded');
