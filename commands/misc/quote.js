@@ -1,17 +1,24 @@
 'use strict';
 
-const axios = require('axios');
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
 const { emoji } = require('../../config/default');
+const { request } = require('undici');
 
 module.exports = {
     name: 'quote',
     cooldown: 2,
     async execute(_client, message) {
         try {
-            const response = await axios.get('https://labs.bible.org/api/?passage=random&type=json');
-            const quoteData = response.data[0];
+            const response = await request('https://labs.bible.org/api/?passage=random&type=json', {
+                timeout: 1000,
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const [quoteData] = await response.body.json();
 
             message.channel.send({
                 embeds: [
