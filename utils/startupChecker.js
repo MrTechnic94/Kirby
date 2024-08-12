@@ -28,7 +28,7 @@ function checkFFmpeg() {
     const hasFFmpegStatic = ['dependencies', 'optionalDependencies', 'devDependencies'].some(dep => pkg[dep]?.['ffmpeg-static']);
 
     try {
-        execSync('ffmpeg -version', { stdio: 'ignore' });
+        execSync('ffmpeg -version', { stdio: 'ignore', timeout: 3000 });
     } catch {
         if (!hasFFmpegStatic) {
             logger.error('No FFmpeg installed');

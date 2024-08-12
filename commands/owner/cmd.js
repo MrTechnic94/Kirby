@@ -12,7 +12,7 @@ module.exports = {
     async execute(_client, message, args) {
         if (!args.length) return message.channel.send({ embeds: [errorEmbeds.args_cmd_error] });
 
-        exec(args.join(' '), (error, stdout) => {
+        exec(args.join(' '), { timeout: 3000 }, (error, stdout) => {
             if (error) return message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.crossmark} Something went wrong!\nAn error occurred while executing command\n\`\`\`${error}\`\`\``, color: embedOptions.errorColor })] });
 
             message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nCommand was executed successfully\n\`\`\`${stdout}\`\`\`` })] });

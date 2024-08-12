@@ -11,11 +11,7 @@ module.exports = {
     async execute(_client, message) {
         try {
             const response = await request('https://labs.bible.org/api/?passage=random&type=json', {
-                timeout: 1000,
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                timeout: 1000
             });
 
             const [quoteData] = await response.body.json();
