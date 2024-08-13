@@ -10,11 +10,9 @@ module.exports = {
     cooldown: 2,
     async execute(_client, message) {
         try {
-            const response = await request('https://labs.bible.org/api/?passage=random&type=json', {
-                timeout: 1000
-            });
+            const { body } = await request('https://labs.bible.org/api/?passage=random&type=json', { timeout: 1000 });
 
-            const [quoteData] = await response.body.json();
+            const [quoteData] = await body.json();
 
             message.channel.send({
                 embeds: [

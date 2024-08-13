@@ -56,13 +56,13 @@ module.exports = {
                 description: `### ${emoji.loudsound} Music commands\n` + commands.music.map(command => `\`${prefix}${command.name}\` - **${command.description}**`).join('\n'),
                 footer: {
                     text: 'Page 1/2'
-                },
+                }
             }),
             createEmbed({
                 description: `### ${emoji.question} General commands\n` + commands.general.map(command => `\`${prefix}${command.name}\` - **${command.description}**`).join('\n'),
                 footer: {
                     text: 'Page 2/2'
-                },
+                }
             })
         ];
 
@@ -78,10 +78,8 @@ module.exports = {
 
         const row = new ActionRowBuilder();
 
-        if (2 > 1) {
-            if (currentPage > 0) row.addComponents(backwardButton);
-            if (currentPage < 2 - 1) row.addComponents(forwardButton);
-        }
+        if (currentPage > 0) row.addComponents(backwardButton);
+        if (currentPage < 2 - 1) row.addComponents(forwardButton);
 
         const msg = await message.channel.send({ embeds: [embeds[currentPage]], components: [row] });
 
