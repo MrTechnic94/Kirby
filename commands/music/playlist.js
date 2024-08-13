@@ -20,9 +20,7 @@ module.exports = {
         const tracks = queue.tracks.map((track, i) => `**${i + 1}.** [${track.cleanTitle}](${track.url}) [${track.duration}]`);
         const getFooterText = () => {
             let footerText = `Page ${page + 1}/${totalPages}`;
-            if (queue.tracks.size > 0) {
-                footerText += ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}`;
-            }
+            if (queue.tracks.size > 0) footerText += ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}`;
             return footerText;
         };
 

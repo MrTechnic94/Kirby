@@ -12,7 +12,6 @@ module.exports = {
     async execute(_client, message) {
         const guildData = await redis.hgetall(message.guild.id);
         const prefix = guildData?.prefix ?? process.env.PREFIX;
-        const totalPages = 2;
         let currentPage = 0;
 
         const commands = {
@@ -56,11 +55,14 @@ module.exports = {
             createEmbed({
                 description: `### ${emoji.loudsound} Music commands\n` + commands.music.map(command => `\`${prefix}${command.name}\` - **${command.description}**`).join('\n'),
                 footer: {
-                    text: `Page ${currentPage + 1}/${totalPages}`
+                    text: 'Page 1/2'
                 },
             }),
             createEmbed({
-                description: `### ${emoji.question} General commands\n` + commands.general.map(command => `\`${prefix}${command.name}\` - **${command.description}**`).join('\n')
+                description: `### ${emoji.question} General commands\n` + commands.general.map(command => `\`${prefix}${command.name}\` - **${command.description}**`).join('\n'),
+                footer: {
+                    text: 'Page 2/2'
+                },
             })
         ];
 
@@ -76,9 +78,9 @@ module.exports = {
 
         const row = new ActionRowBuilder();
 
-        if (totalPages > 1) {
+        if (2 > 1) {
             if (currentPage > 0) row.addComponents(backwardButton);
-            if (currentPage < totalPages - 1) row.addComponents(forwardButton);
+            if (currentPage < 2 - 1) row.addComponents(forwardButton);
         }
 
         const msg = await message.channel.send({ embeds: [embeds[currentPage]], components: [row] });
@@ -90,25 +92,20 @@ module.exports = {
         collector.on('collect', async interaction => {
             if (interaction.customId === 'backward' && currentPage > 0) {
                 currentPage--;
-            } else if (interaction.customId === 'forward' && currentPage < totalPages - 1) {
+            } else if (interaction.customId === 'forward' && currentPage < 2 - 1) {
                 currentPage++;
             }
 
             row.components = [];
 
             if (currentPage > 0) row.addComponents(backwardButton);
-            if (currentPage < totalPages - 1) row.addComponents(forwardButton);
+            if (currentPage < 2 - 1) row.addComponents(forwardButton);
 
-            updateEmbed();
             await interaction.update({ embeds: [embeds[currentPage]], components: [row] });
         });
 
         collector.on('end', () => {
             msg.edit({ components: [] });
         });
-
-        function updateEmbed() {
-            embeds[currentPage].setFooter({ text: `Page ${currentPage + 1}/${totalPages}` });
-        }
     },
 };
