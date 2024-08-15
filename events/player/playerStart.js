@@ -9,7 +9,7 @@ module.exports = {
 	async execute(_client, queue, track) {
 		const guildData = await redis.hgetall(queue.guild.id);
 
-		if (guildData?.trackAnnounce === 'false') return;
+		if (guildData.trackAnnounce === 'false') return;
 
 		const requester = track.requestedBy ?? '**`unknown`**';
 

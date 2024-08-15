@@ -16,7 +16,7 @@ module.exports = {
 
     switch (args[0]) {
       case 'remove':
-        if (!message.guild.roles.cache.has(guildData?.djRoleId)) return message.channel.send({ embeds: [errorEmbeds.dj_set_error] });
+        if (!message.guild.roles.cache.has(guildData.djRoleId)) return message.channel.send({ embeds: [errorEmbeds.dj_set_error] });
 
         await redis.hset(message.guild.id, {
           prefix: guildData.prefix ?? process.env.PREFIX,
@@ -30,7 +30,7 @@ module.exports = {
       default:
         if (!role) return message.channel.send({ embeds: [errorEmbeds.role_error] });
 
-        if (guildData?.djRoleId === role.id) return message.channel.send({ embeds: [errorEmbeds.already_role_error] });
+        if (guildData.djRoleId === role.id) return message.channel.send({ embeds: [errorEmbeds.already_role_error] });
 
         await redis.hset(message.guild.id, {
           prefix: guildData.prefix ?? process.env.PREFIX,

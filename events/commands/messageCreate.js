@@ -38,7 +38,7 @@ module.exports = {
 		}
 
 		const guildData = await redis.hgetall(message.guild.id);
-		const prefix = guildData?.prefix ?? process.env.PREFIX;
+		const prefix = guildData.prefix ?? process.env.PREFIX;
 
 		// Checking if command starts with a prefix or bot mention
 		if (!message.content.startsWith(prefix) && !message.content.match(new RegExp(`^<@!?${client.user.id}>( |)$`))) return;
@@ -84,7 +84,7 @@ module.exports = {
 		}
 
 		// Checking if user has DJ role
-		if (cmd.dj && guildData?.djRoleId && !message.member.roles.cache.has(guildData.djRoleId) && message.member.voice.channel?.members.size > 2 && !message.member.permissions.has(PermissionsBitField.Flags.ManageMessages)) {
+		if (cmd.dj && guildData.djRoleId && !message.member.roles.cache.has(guildData.djRoleId) && message.member.voice.channel?.members.size > 2 && !message.member.permissions.has(PermissionsBitField.Flags.ManageMessages)) {
 			return message.channel.send({ embeds: [errorEmbeds.dj_permission_error] });
 		}
 

@@ -11,7 +11,7 @@ module.exports = {
     cooldown: 2,
     async execute(_client, message) {
         const guildData = await redis.hgetall(message.guild.id);
-        const prefix = guildData?.prefix ?? process.env.PREFIX;
+        const prefix = guildData.prefix ?? process.env.PREFIX;
         let currentPage = 0;
 
         const commands = {
@@ -76,10 +76,7 @@ module.exports = {
             .setLabel('▶️')
             .setStyle(ButtonStyle.Primary);
 
-        const row = new ActionRowBuilder();
-
-        if (currentPage > 0) row.addComponents(backwardButton);
-        if (currentPage < 2 - 1) row.addComponents(forwardButton);
+        const row = new ActionRowBuilder().addComponents(currentPage > 0 ? backwardButton : forwardButton);
 
         const msg = await message.channel.send({ embeds: [embeds[currentPage]], components: [row] });
 
@@ -88,16 +85,11 @@ module.exports = {
         const collector = msg.createMessageComponentCollector({ filter, time: 120000 });
 
         collector.on('collect', async interaction => {
-            if (interaction.customId === 'backward' && currentPage > 0) {
-                currentPage--;
-            } else if (interaction.customId === 'forward' && currentPage < 2 - 1) {
-                currentPage++;
-            }
+            interaction.customId === 'backward' && currentPage > 0 ? currentPage-- : currentPage++;
 
             row.components = [];
 
-            if (currentPage > 0) row.addComponents(backwardButton);
-            if (currentPage < 2 - 1) row.addComponents(forwardButton);
+            row.addComponents(currentPage > 0 ? backwardButton : forwardButton);
 
             await interaction.update({ embeds: [embeds[currentPage]], components: [row] });
         });

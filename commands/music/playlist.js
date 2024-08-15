@@ -16,24 +16,17 @@ module.exports = {
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
         let page = 0;
-        const totalPages = Math.max(Math.ceil(queue.tracks.size / 20), 1);
+        const totalPages = Math.ceil(queue.tracks.size / 20) || 1;
         const tracks = queue.tracks.map((track, i) => `**${i + 1}.** [${track.cleanTitle}](${track.url}) [${track.duration}]`);
-        const getFooterText = () => {
-            let footerText = `Page ${page + 1}/${totalPages}`;
-            if (queue.tracks.size > 0) footerText += ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}`;
-            return footerText;
-        };
 
         const createQueueEmbed = () => createEmbed({
             description: `### ${emoji.info} Songs in playlist\n**Currently:**\n[${queue.currentTrack.cleanTitle}](${queue.currentTrack.url}) [${queue.currentTrack.duration}]\n\n**Next:**\n${queue.tracks.size === 0 ? 'No songs' : tracks.slice(page * 20, (page + 1) * 20).join('\n')}`,
             footer: {
-                text: getFooterText()
+                text: `Page ${page + 1}/${totalPages}${queue.tracks.size > 0 ? ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}` : ''}`
             },
         });
 
-        const embed = createQueueEmbed();
-
-        if (queue.tracks.size <= 20) return message.channel.send({ embeds: [embed] });
+        if (queue.tracks.size <= 20) return message.channel.send({ embeds: [createQueueEmbed()] });
 
         const backwardButton = new ButtonBuilder()
             .setCustomId('backward')
@@ -52,9 +45,7 @@ module.exports = {
             return row;
         };
 
-        const row = createActionRow();
-
-        const msg = await message.channel.send({ embeds: [embed], components: [row] });
+        const msg = await message.channel.send({ embeds: [createQueueEmbed()], components: [createActionRow()] });
 
         const filter = (interaction) => interaction.user.id === message.author.id;
 
@@ -67,9 +58,7 @@ module.exports = {
                 page++;
             }
 
-            const updatedEmbed = createQueueEmbed();
-            const updatedRow = createActionRow();
-            await interaction.update({ embeds: [updatedEmbed], components: [updatedRow] });
+            await interaction.update({ embeds: [createQueueEmbed()], components: [createActionRow()] });
         });
 
         collector.on('end', () => {

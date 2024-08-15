@@ -19,11 +19,7 @@ module.exports = {
 
         const queue = useQueue(message.guild.id);
 
-        if (queue) {
-            queue.delete();
-        } else {
-            message.guild.members.me?.voice.disconnect();
-        }
+        queue ? queue.delete() : message.guild.members.me?.voice.disconnect();
 
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.crystalball} **I'm leaving from** <#${message.member?.voice.channelId}>` })] });
     },

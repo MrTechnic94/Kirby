@@ -40,7 +40,7 @@ module.exports = {
 
         const guildData = await redis.hgetall(message.guild.id);
 
-        const prefix = guildData?.prefix ?? process.env.PREFIX;
+        const prefix = guildData.prefix ?? process.env.PREFIX;
 
         message.channel.send({
             embeds: [

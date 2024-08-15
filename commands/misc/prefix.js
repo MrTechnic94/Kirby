@@ -17,7 +17,7 @@ module.exports = {
 
         const guildData = await redis.hgetall(message.guild.id);
 
-        const oldPrefix = guildData?.prefix ?? process.env.PREFIX;
+        const oldPrefix = guildData.prefix ?? process.env.PREFIX;
 
         if (oldPrefix === prefix) return message.channel.send({ embeds: [errorEmbeds.already_prefix_error] });
 

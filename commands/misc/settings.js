@@ -12,9 +12,9 @@ module.exports = {
     async execute(_client, message) {
         const queue = useQueue(message.guild.id);
         const guildData = await redis.hgetall(message.guild.id);
-        const prefix = guildData?.prefix ?? process.env.PREFIX;
-        const dj = guildData?.djRoleId ? `<@&${guildData.djRoleId}>` : '**`none`**';
-        const trackAnnounce = guildData?.trackAnnounce === 'false' ? 'off' : 'on';
+        const prefix = guildData.prefix ?? process.env.PREFIX;
+        const dj = guildData.djRoleId ? `<@&${guildData.djRoleId}>` : '**`none`**';
+        const trackAnnounce = guildData.trackAnnounce === 'false' ? 'off' : 'on';
 
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.managment} Server settings\n**Prefix: \`${prefix}\`**\n**DJ role:** ${dj}\n**Autoplay: \`off\`**\n**Loop: \`off\`**\n**Volume: \`100%\`**\n**Track announce: \`${trackAnnounce}\`**` })] });
 

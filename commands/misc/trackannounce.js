@@ -17,7 +17,7 @@ module.exports = {
 
         const guildData = await redis.hgetall(message.guild.id);
 
-        const oldSettings = guildData?.trackAnnounce ?? 'true';
+        const oldSettings = guildData.trackAnnounce ?? 'true';
 
         if (oldSettings === newSettings) return message.channel.send({ embeds: [errorEmbeds.setting_already_use_error] });
 

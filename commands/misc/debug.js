@@ -20,7 +20,7 @@ module.exports = {
         message.channel.send({
             embeds: [
                 createEmbed({
-                    description: `### ${emoji.disk} Debug\nShard ${message.guild.shardId}\n\`\`\`Ping :: ${ping}ms\nUptime :: ${formattedTime}\nSystem :: ${system}\nCpu usage :: ${cpuUsage}%\nRam usage :: ${memUsage}mb\nGuids count :: ${client.guilds.cache.size}\nActive connections :: ${player.generateStatistics().queues.length}\`\`\``
+                    description: `### ${emoji.disk} Debug\n\`\`\`Shard :: ${message.guild.shardId}\nPing :: ${ping}ms\nUptime :: ${formattedTime}\nSystem :: ${system}\nCpu usage :: ${cpuUsage}%\nRam usage :: ${memUsage}mb\nGuids count :: ${client.guilds.cache.size}\nActive connections :: ${player.generateStatistics().queues.length}\`\`\``
                 }),
             ],
         });
