@@ -20,8 +20,7 @@ module.exports = {
 
         await redis.hset(message.guild.id, {
           prefix: guildData.prefix ?? process.env.PREFIX,
-          djRoleId: null,
-          trackAnnounce: guildData.trackAnnounce ?? 'true'
+          djRoleId: null
         });
 
         message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nDJ role removed` })] });
@@ -34,8 +33,7 @@ module.exports = {
 
         await redis.hset(message.guild.id, {
           prefix: guildData.prefix ?? process.env.PREFIX,
-          djRoleId: role.id,
-          trackAnnounce: guildData.trackAnnounce ?? 'false'
+          djRoleId: role.id
         });
 
         message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nDJ role set to **${role}**` })] });

@@ -1,16 +1,11 @@
 'use strict';
 
-const redis = require('../../utils/redis');
 const { emoji } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');
 
 module.exports = {
 	name: 'playerStart',
 	async execute(_client, queue, track) {
-		const guildData = await redis.hgetall(queue.guild.id);
-
-		if (guildData.trackAnnounce === 'false') return;
-
 		const requester = track.requestedBy ?? '**`unknown`**';
 
 		queue.npmessage = await queue.metadata.send({

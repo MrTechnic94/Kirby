@@ -14,9 +14,8 @@ module.exports = {
         const guildData = await redis.hgetall(message.guild.id);
         const prefix = guildData.prefix ?? process.env.PREFIX;
         const dj = guildData.djRoleId ? `<@&${guildData.djRoleId}>` : '**`none`**';
-        const trackAnnounce = guildData.trackAnnounce === 'false' ? 'off' : 'on';
 
-        if (!queue?.isPlaying()) return message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.managment} Server settings\n**Prefix: \`${prefix}\`**\n**DJ role:** ${dj}\n**Autoplay: \`off\`**\n**Loop: \`off\`**\n**Volume: \`100%\`**\n**Track announce: \`${trackAnnounce}\`**` })] });
+        if (!queue?.isPlaying()) return message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.managment} Server settings\n**Prefix: \`${prefix}\`**\n**DJ role:** ${dj}\n**Autoplay: \`off\`**\n**Loop: \`off\`**\n**Volume: \`100%\`**` })] });
 
         const autoplay = queue.repeatMode === QueueRepeatMode.AUTOPLAY ? '`on`' : '`off`';
         const loop = queue.repeatMode === QueueRepeatMode.OFF ? '`off`' : queue.repeatMode === QueueRepeatMode.TRACK ? '`track`' : '`playlist`';
@@ -24,7 +23,7 @@ module.exports = {
         message.channel.send({
             embeds: [
                 createEmbed({
-                    description: `### ${emoji.managment} Server settings\n**Prefix: \`${prefix}\`**\n**DJ role:** ${dj}\n**Autoplay: ${autoplay}**\n**Loop: ${loop}**\n**Volume: \`${queue.node.volume}%\`**\n**Track announce: \`${trackAnnounce}\`**`
+                    description: `### ${emoji.managment} Server settings\n**Prefix: \`${prefix}\`**\n**DJ role:** ${dj}\n**Autoplay: ${autoplay}**\n**Loop: ${loop}**\n**Volume: \`${queue.node.volume}%\`**`
                 }),
             ],
         });

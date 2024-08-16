@@ -24,8 +24,7 @@ module.exports = {
         try {
             await redis.hset(message.guild.id, {
                 prefix: prefix,
-                djRoleId: guildData.djRoleId,
-                trackAnnounce: guildData.trackAnnounce ?? 'true'
+                djRoleId: guildData.djRoleId
             });
 
             message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nPrefix set to **${prefix}**` })] });
