@@ -19,12 +19,14 @@ module.exports = {
         const totalPages = Math.ceil(queue.tracks.size / 20) || 1;
         const tracks = queue.tracks.map((track, i) => `**${i + 1}.** [${track.cleanTitle}](${track.url}) [${track.duration}]`);
 
-        const createQueueEmbed = () => createEmbed({
-            description: `### ${emoji.info} Songs in playlist\n**Currently:**\n[${queue.currentTrack.cleanTitle}](${queue.currentTrack.url}) [${queue.currentTrack.duration}]\n\n**Next:**\n${queue.tracks.size === 0 ? 'No songs' : tracks.slice(page * 20, (page + 1) * 20).join('\n')}`,
-            footer: {
-                text: `Page ${page + 1}/${totalPages}${queue.tracks.size > 0 ? ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}` : ''}`
-            },
-        });
+        function createQueueEmbed() {
+            return createEmbed({
+                description: `### ${emoji.info} Songs in playlist\n**Currently:**\n[${queue.currentTrack.cleanTitle}](${queue.currentTrack.url}) [${queue.currentTrack.duration}]\n\n**Next:**\n${queue.tracks.size === 0 ? 'No songs' : tracks.slice(page * 20, (page + 1) * 20).join('\n')}`,
+                footer: {
+                    text: `Page ${page + 1}/${totalPages}${queue.tracks.size > 0 ? ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}` : ''}`
+                },
+            });
+        }
 
         if (queue.tracks.size <= 20) return message.channel.send({ embeds: [createQueueEmbed()] });
 
@@ -38,12 +40,12 @@ module.exports = {
             .setLabel('▶️')
             .setStyle(ButtonStyle.Primary);
 
-        const createActionRow = () => {
+        function createActionRow() {
             const row = new ActionRowBuilder();
             if (page > 0) row.addComponents(backwardButton);
             if (page < totalPages - 1) row.addComponents(forwardButton);
             return row;
-        };
+        }
 
         const msg = await message.channel.send({ embeds: [createQueueEmbed()], components: [createActionRow()] });
 

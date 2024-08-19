@@ -52,7 +52,7 @@ const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
 				highWaterMark: 2 * 1024 * 1024
 			}
 		});
-		await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor');
+		await player.extractors.loadDefault(ext => ext !== 'YouTubeExtractor');
 		logger.info('All extractors loaded');
 
 		// Logging bot into Discord
