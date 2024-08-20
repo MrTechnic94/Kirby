@@ -21,28 +21,28 @@ const { Player } = require('discord-player');
 const { YoutubeiExtractor } = require('discord-player-youtubei');
 require('dotenv').config({ path: './config/.env' });
 
-// Allows capturing errors and checking presence of required parameters
-startupChecker();
-
-// Initializing client with specified settings
-const client = new Client(clientOptions);
-
-// Loading discord-player
-const player = new Player(client, {
-	skipFFmpeg: clientPlayerOptions.skipFFmpeg
-});
-
-// Setting flag indicating whether developer mode is enabled
-global.isDev = process.env.DEV_MODE === 'true';
-
-// Bot token
-const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
-
-// Loading commands and events handler
-['commands', 'aliases'].forEach(name => client[name] = new Collection());
-['./structures/commands', './structures/events'].forEach(path => require(path)(client));
-
 (async () => {
+	// Allows capturing errors and checking presence of required parameters
+	startupChecker();
+
+	// Initializing client with specified settings
+	const client = new Client(clientOptions);
+
+	// Loading discord-player
+	const player = new Player(client, {
+		skipFFmpeg: clientPlayerOptions.skipFFmpeg
+	});
+
+	// Setting flag indicating whether developer mode is enabled
+	global.isDev = process.env.DEV_MODE === 'true';
+
+	// Bot token
+	const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
+
+	// Loading commands and events handler
+	['commands', 'aliases'].forEach(name => client[name] = new Collection());
+	['./structures/commands', './structures/events'].forEach(path => require(path)(client));
+
 	try {
 		// Loading extractors for discord-player
 		await player.extractors.register(YoutubeiExtractor, {
