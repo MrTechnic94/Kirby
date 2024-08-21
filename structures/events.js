@@ -35,7 +35,6 @@ module.exports = (client) => {
           break;
         default:
           client[event.once ? 'once' : 'on'](eventName, eventHandler);
-          break;
       }
     }
   });

@@ -37,7 +37,6 @@ module.exports = {
         });
 
         message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.checkmark} Success!\nDJ role set to **${role}**` })] });
-        break;
     }
   },
 };
