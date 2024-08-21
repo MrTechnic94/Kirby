@@ -16,7 +16,7 @@
 const logger = require('./utils/consoleLogger');
 const { clientOptions, clientPlayerOptions } = require('./config/default');
 const { startupChecker } = require('./utils/startupChecker');
-const { Client, Collection } = require('discord.js');
+const { Client } = require('discord.js');
 const { Player } = require('discord-player');
 const { YoutubeiExtractor } = require('discord-player-youtubei');
 require('dotenv').config({ path: './config/.env' });
@@ -40,8 +40,11 @@ require('dotenv').config({ path: './config/.env' });
 	const token = global.isDev ? process.env.DEV_TOKEN : process.env.TOKEN;
 
 	// Loading commands and events handler
-	['commands', 'aliases'].forEach(name => client[name] = new Collection());
-	['./structures/commands', './structures/events'].forEach(path => require(path)(client));
+	client.commands = new Map();
+	client.aliases = new Map();
+
+	require('./structures/commands')(client);
+	require('./structures/events')(client);
 
 	try {
 		// Loading extractors for discord-player
