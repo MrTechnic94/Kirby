@@ -2,10 +2,9 @@
 
 const redis = require('../../utils/redis');
 const logger = require('../../utils/consoleLogger');
-const { Events } = require('discord.js');
 
 module.exports = {
-	name: Events.GuildDelete,
+	name: 'guildDelete',
 	async execute(_client, guild) {
 		try {
 			// Checking and removing an entry from database for selected guild

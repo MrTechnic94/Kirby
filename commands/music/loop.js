@@ -2,7 +2,7 @@
 
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
-const { useQueue, QueueRepeatMode } = require('discord-player');
+const { useQueue } = require('discord-player');
 const { embedOptions, emoji } = require('../../config/default');
 
 module.exports = {
@@ -18,9 +18,9 @@ module.exports = {
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
         const modes = {
-            off: QueueRepeatMode.OFF,
-            track: QueueRepeatMode.TRACK,
-            playlist: QueueRepeatMode.QUEUE
+            off: 0,
+            track: 1,
+            playlist: 2
         };
 
         let requestedMode = args[0];
@@ -30,15 +30,15 @@ module.exports = {
 
             queue.setRepeatMode(modes[requestedMode]);
         } else {
-            queue.setRepeatMode(queue.repeatMode === QueueRepeatMode.OFF ? QueueRepeatMode.TRACK : (queue.repeatMode === QueueRepeatMode.TRACK ? QueueRepeatMode.QUEUE : QueueRepeatMode.OFF));
+            queue.setRepeatMode(queue.repeatMode === 0 ? 1 : (queue.repeatMode === 1 ? 2 : 0));
             requestedMode = 'toggle';
         }
 
-        const modeName = queue.repeatMode === QueueRepeatMode.TRACK ? 'Track' : 'Playlisty';
+        const modeName = queue.repeatMode === 1 ? 'Track' : 'Playlisty';
 
-        const modeOff = queue.repeatMode === QueueRepeatMode.OFF ? 'disabled' : 'enabled';
+        const modeOff = queue.repeatMode === 0 ? 'disabled' : 'enabled';
 
-        const modeEmoji = queue.repeatMode === QueueRepeatMode.QUEUE ? emoji.repeatone : emoji.repeat;
+        const modeEmoji = queue.repeatMode === 2 ? emoji.repeatone : emoji.repeat;
 
         message.channel.send({ embeds: [createEmbed({ description: `${modeEmoji} **\`${modeName}\` loop has been \`${modeOff}\`**` })] });
     },

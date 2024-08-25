@@ -2,10 +2,9 @@
 
 const logger = require('../../utils/consoleLogger');
 const { useMainPlayer } = require('discord-player');
-const { Events } = require('discord.js');
 
 module.exports = {
-	name: Events.ClientReady,
+	name: 'ready',
 	once: true,
 	async execute(client) {
 		// Displaying bot login information

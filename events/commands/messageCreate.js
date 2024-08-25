@@ -5,7 +5,7 @@ const logger = require('../../utils/consoleLogger');
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { embedOptions, emoji } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');
-const { Events, PermissionsBitField } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 
 // Map storing cooldown expiration times for commands
 const cooldowns = new Map();
@@ -24,7 +24,7 @@ const botPermissions = [
 ];
 
 module.exports = {
-	name: Events.MessageCreate,
+	name: 'messageCreate',
 	async execute(client, message) {
 		// Checking if command was executed in a guild and if command author is not a bot
 		if (message.author.bot || !message.guild) return;

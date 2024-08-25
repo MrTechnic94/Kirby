@@ -1,8 +1,8 @@
 'use strict';
 
 const errorEmbeds = require('../../utils/errorEmbeds');
-const { useQueue, QueueRepeatMode } = require('discord-player');
 const { createEmbed } = require('../../utils/embedCreator');
+const { useQueue } = require('discord-player');
 const { emoji } = require('../../config/default');
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
 
         const queue = useQueue(message.guild.id);
 
-        if (!queue?.isPlaying() || queue.repeatMode === QueueRepeatMode.OFF && !queue.tracks.at(0)) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
+        if (!queue?.isPlaying() || queue.repeatMode === 0 && !queue.tracks.at(0)) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
         queue.node.skip();
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.nextsong} **Skipped current song**` })] });

@@ -2,7 +2,7 @@
 
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
-const { useQueue, QueueRepeatMode } = require('discord-player');
+const { useQueue } = require('discord-player');
 const { emoji } = require('../../config/default');
 
 module.exports = {
@@ -17,9 +17,9 @@ module.exports = {
 
     if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
-    queue.setRepeatMode(queue.repeatMode === QueueRepeatMode.AUTOPLAY ? QueueRepeatMode.OFF : QueueRepeatMode.AUTOPLAY);
+    queue.setRepeatMode(queue.repeatMode === 3 ? 0 : 3);
 
-    const mode = queue.repeatMode === QueueRepeatMode.AUTOPLAY ? 'enabled' : 'disabled';
+    const mode = queue.repeatMode === 3 ? 'enabled' : 'disabled';
 
     message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **Autoplay has been \`${mode}\`**` })] });
   },

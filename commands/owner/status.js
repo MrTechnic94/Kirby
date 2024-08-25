@@ -2,7 +2,6 @@
 
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
-const { ActivityType } = require('discord.js');
 const { emoji } = require('../../config/default');
 
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
         client.user.setPresence({
             activities: [{
                 name: query,
-                type: ActivityType.Custom
+                type: 4
             }]
         });
 

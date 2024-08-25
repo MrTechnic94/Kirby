@@ -1,7 +1,5 @@
 'use strict';
 
-const { PresenceUpdateStatus, ActivityType, GatewayIntentBits } = require('discord.js');
-
 // discord.js client settings
 module.exports.clientOptions = {
     restRequestTimeout: 60000,
@@ -10,39 +8,13 @@ module.exports.clientOptions = {
     messageSweepInterval: 43200,
     messageCacheLifetime: 21600,
     intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.MessageContent
+        33409
     ],
-    // makeCache: Options.cacheWithLimits({
-    //     ...Options.DefaultMakeCacheSettings,
-    //     MessageManager: 10,
-    //     ThreadManager: 0,
-    //     PresenceManager: 0,
-    //     ReactionManager: 0,
-    //     VoiceStateManager: 10,
-    //     GuildMemberManager: {
-    //         maxSize: 50,
-    //         keepOverLimit: member => member.id === member.client.user.id
-    //     }
-    // }),
-    // sweepers: {
-    //     ...Options.DefaultSweeperSettings,
-    //     messages: {
-    //         interval: 3600,
-    //         lifetime: 1800
-    //     },
-    //     users: {
-    //         interval: 3600,
-    //         filter: () => user => user.id !== user.client.user.id
-    //     }
-    // },
     presence: {
-        status: PresenceUpdateStatus.Online,
+        status: 'online',
         activities: [{
             name: 'Type k!help',
-            type: ActivityType.Custom
+            type: 4
         }]
     },
     allowedMentions: {
