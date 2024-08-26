@@ -1,8 +1,8 @@
 'use strict';
 
 const logger = require('../utils/consoleLogger');
-const { join } = require('node:path');
 const { readdirSync } = require('node:fs');
+const { join } = require('node:path');
 
 module.exports = (client) => {
   const commandsDir = join(__dirname, '../commands/');

@@ -11,7 +11,6 @@ module.exports.clientOptions = {
         33409
     ],
     presence: {
-        status: 'online',
         activities: [{
             name: 'Type k!help',
             type: 4
