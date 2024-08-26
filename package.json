@@ -1,6 +1,6 @@
 {
   "name": "kirby",
-  "version": "1.4",
+  "version": "1.5",
   "description": "A simple yet powerful 24/7 music bot for Discord, providing nonstop music streaming",
   "main": "index.js",
   "scripts": {
