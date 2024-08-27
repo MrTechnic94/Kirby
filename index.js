@@ -14,7 +14,7 @@
 'use strict';
 
 const logger = require('./utils/consoleLogger');
-const { clientOptions, clientPlayerOptions } = require('./config/default');
+const { botOptions, clientOptions, clientPlayerOptions } = require('./config/default');
 const { startupChecker } = require('./utils/startupChecker');
 const { Client } = require('discord.js');
 const { Player } = require('discord-player');
@@ -26,7 +26,24 @@ require('dotenv').config({ path: './config/.env' });
 	startupChecker();
 
 	// Initializing client with specified settings
-	const client = new Client(clientOptions);
+	const client = new Client({
+		restRequestTimeout: clientOptions.restRequestTimeout,
+		messageEditHistoryMaxSize: clientOptions.messageEditHistoryMaxSize,
+		messageCacheMaxSize: clientOptions.messageCacheMaxSize,
+		messageSweepInterval: clientOptions.messageSweepInterval,
+		messageCacheLifetime: clientOptions.messageCacheLifetime,
+		intents: clientOptions.intents,
+		presence: {
+			activities: [{
+				name: botOptions.activityName,
+				type: botOptions.activityType
+			}]
+		},
+		allowedMentions: {
+			parse: true,
+			repliedUser: ['users', 'roles']
+		}
+	});
 
 	// Loading discord-player
 	const player = new Player(client, {

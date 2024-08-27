@@ -2,7 +2,7 @@
 
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
-const { emoji } = require('../../config/default');
+const { botOptions, emoji } = require('../../config/default');
 
 module.exports = {
     name: 'status',
@@ -16,7 +16,7 @@ module.exports = {
         client.user.setPresence({
             activities: [{
                 name: query,
-                type: 4
+                type: botOptions.activityType
             }]
         });
 
