@@ -24,10 +24,10 @@ module.exports.clientPlayerOptions = {
 
 // Other discord-player player settings
 module.exports.otherPlayerOptions = {
-    leaveOnEndCooldown:   240000,
-    leaveOnEmptyCooldown: 60000,
     leaveOnStop:          true,
     pauseOnEmpty:         true,
+    leaveOnEndCooldown:   240000,
+    leaveOnEmptyCooldown: 60000,
     bufferingTimeout:     3000,
     connectionTimeout:    20000
 };
