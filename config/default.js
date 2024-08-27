@@ -65,7 +65,8 @@ module.exports.emoji = {
     forward: '\`⏩\`',
     nextsong: '\`⏭️\`',
     question: '\`❓\`',
-    scroll: '\`📜\`'
+    scroll: '\`📜\`',
+    regredcircle: '🔴'
 };
 
 // Other settings

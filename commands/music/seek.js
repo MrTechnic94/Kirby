@@ -17,6 +17,8 @@ module.exports = {
 
     if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
 
+    if (queue.currentTrack.raw.live) return message.channel.send({ embeds: [errorEmbeds.track_live_error] });
+
     const seekTime = parseTime(args[0]);
 
     if (!seekTime || seekTime === 0) return message.channel.send({ embeds: [errorEmbeds.number_error] });

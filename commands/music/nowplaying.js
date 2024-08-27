@@ -18,11 +18,12 @@ module.exports = {
         const status = queue.node.isPaused() ? '▶️' : '⏸️';
         const requester = queue.currentTrack.requestedBy ?? '**`unknown`**';
         const author = queue.currentTrack.author ?? 'unknown';
+        const duration = queue.currentTrack.raw.live ? `**Progress bar is not visible because it is a \`${emoji.regredcircle} Live\`**` : `\n${status} | ${progressbar} ${queue.node.getTimestamp().current.label} / ${queue.currentTrack.duration}`;
 
         message.channel.send({
             embeds: [
                 createEmbed({
-                    description: `### ${emoji.zap} Now playing\n**Title: [${queue.currentTrack.cleanTitle}](${queue.currentTrack.url})**\n**Author: \`${author}\`**\n**Volume: \`${queue.node.volume}%\`**\n**Requested by:** ${requester}\n\n${status} | ${progressbar} ${queue.node.getTimestamp().current.label} / ${queue.currentTrack.duration}`,
+                    description: `### ${emoji.zap} Now playing\n**Title: [${queue.currentTrack.cleanTitle}](${queue.currentTrack.url})**\n**Author: \`${author}\`**\n**Volume: \`${queue.node.volume}%\`**\n**Requested by:** ${requester}\n${duration}`,
                     thumbnail: queue.currentTrack.thumbnail
                 }),
             ],

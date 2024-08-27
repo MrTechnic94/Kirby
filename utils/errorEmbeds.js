@@ -45,7 +45,8 @@ const messages = {
     no_found_lyrics_error: 'No lyrics found for this song',
     no_lyrics_args_error: 'Provide song name or start playing it',
     resumed_error: 'Player is not paused',
-    paused_error: 'Player is already paused'
+    paused_error: 'Player is already paused',
+    track_live_error: 'You can\'t seek live'
 };
 
 // Generating messages
