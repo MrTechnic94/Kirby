@@ -48,7 +48,7 @@ module.exports = {
 			return message.channel.send({
 				embeds: [
 					createEmbed({
-						description: `**Hello** <@${message.author.id}> ${emoji.kirbyhi}\n**My prefix is: \`${prefix}\`**\n**If you want to learn more about my commands, type: \`${prefix}help\`**`,
+						description: `**Hello** <@${message.author.id}> ${emoji.kirbyhi}\n**My prefix is: \`${prefix}\`**\n**If you want to learn more about my commands, type: \`${prefix}help\`**`
 					})
 				],
 			});
