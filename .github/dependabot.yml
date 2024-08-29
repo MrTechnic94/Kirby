@@ -11,3 +11,4 @@ updates:
       interval: "daily"
       time: "12:00"
       timezone: "UTC"
+      target-branch: "Dev"
