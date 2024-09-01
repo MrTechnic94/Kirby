@@ -15,7 +15,7 @@ module.exports = {
 
         const queue = useQueue(message.guild.id);
 
-        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
+        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 
         if (queue.filters.ffmpeg.getFiltersEnabled().length >= otherPlayerOptions.maxFiltersEnabled && queue.filters.ffmpeg.isDisabled('nightcore')) return message.channel.send({ embeds: [errorEmbeds.max_filters_enabled_error] });
 

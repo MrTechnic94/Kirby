@@ -5,7 +5,6 @@ const { embedOptions, otherPlayerOptions, emoji } = require('../config/default')
 
 // Variable containing messages
 const messages = {
-    queue_error: 'There are no songs in playlist',
     voice_error: 'You are not on my voice channel',
     member_voice_error: 'You are not on a voice channel',
     bot_voice_error: 'I am not on a voice channel',

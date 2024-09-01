@@ -13,7 +13,7 @@ module.exports = {
     async execute(_client, message) {
         const queue = useQueue(message.guild.id);
 
-        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
+        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 
         let page = 0;
         const totalPages = Math.ceil(queue.tracks.size / 20) || 1;
