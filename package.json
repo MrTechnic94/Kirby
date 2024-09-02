@@ -7,7 +7,7 @@
     "start": "node index.js",
     "pm2": "npx pm2 start index.js --name kirby -- --color && npx pm2 logs",
     "pm2:default": "pm2 start index.js --name kirby -- --color && pm2 logs",
-    "update:all": "corepack use pnpm@latest && pnpm install && pnpm update"
+    "update:all": "corepack use pnpm@latest && pnpm update"
   },
   "author": "MrTechnic",
   "license": "UNLICENSED",
