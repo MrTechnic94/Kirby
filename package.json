@@ -20,7 +20,7 @@
     "dotenv": "^16.4.5",
     "ioredis": "^5.4.1",
     "mediaplex": "^0.0.9",
-    "pino": "^9.3.2",
+    "pino": "^9.4.0",
     "undici": "^6.19.8"
   },
   "optionalDependencies": {
