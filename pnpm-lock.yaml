@@ -75,10 +75,6 @@ packages:
     resolution: {integrity: sha512-SVb428OMd3WO1paV3rm6tSjM4wC+Kecaa1EUGX7vc6/fddvw/6lg90z4QtCqm21zvVe92vMMDt9+DkIvjXImQQ==}
     engines: {node: '>=16.11.0'}
 
-  '@discordjs/collection@2.1.0':
-    resolution: {integrity: sha512-mLcTACtXUuVgutoznkh6hS3UFqYirDYAg5Dc1m8xn6OvPjetnUlf/xjtqnnc47OwWdaoCQnHmHh9KofhD6uRqw==}
-    engines: {node: '>=18'}
-
   '@discordjs/collection@2.1.1':
     resolution: {integrity: sha512-LiSusze9Tc7qF03sLCujF5iZp7K+vRNEDBZ86FT9aQAv3vxMLihUvKvpsCWiQ2DJq1tVckopKm1rxomgNUc9hg==}
     engines: {node: '>=18'}
@@ -1478,8 +1474,6 @@ snapshots:
 
   '@discordjs/collection@1.5.3': {}
 
-  '@discordjs/collection@2.1.0': {}
-
   '@discordjs/collection@2.1.1': {}
 
   '@discordjs/formatters@0.5.0':
@@ -1502,7 +1496,7 @@ snapshots:
 
   '@discordjs/ws@1.1.1':
     dependencies:
-      '@discordjs/collection': 2.1.0
+      '@discordjs/collection': 2.1.1
       '@discordjs/rest': 2.4.0
       '@discordjs/util': 1.1.1
       '@sapphire/async-queue': 1.5.3
