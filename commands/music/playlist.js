@@ -17,11 +17,11 @@ module.exports = {
 
         let page = 0;
         const totalPages = Math.ceil(queue.tracks.size / 20) || 1;
-        const tracks = queue.tracks.map((track, i) => `**${i + 1}.** [${track.cleanTitle}](${track.url}) [${track.raw.live ? `**\`${emoji.regredcircle} Live\`**` : track.duration}]`);
+        const tracks = queue.tracks.map((track, i) => `**${i + 1}.** [${track.cleanTitle}](${track.url}) [${track.raw.live ? `**\`${emoji.normalredcircle} Live\`**` : track.duration}]`);
 
         function createQueueEmbed() {
             return createEmbed({
-                description: `### ${emoji.info} Songs in playlist\n**Currently:**\n[${queue.currentTrack.cleanTitle}](${queue.currentTrack.url}) [${queue.currentTrack.raw.live ? `**\`${emoji.regredcircle} Live\`**` : queue.currentTrack.duration}]\n\n**Next:**\n${queue.tracks.size === 0 ? 'No songs' : tracks.slice(page * 20, (page + 1) * 20).join('\n')}`,
+                description: `### ${emoji.info} Songs in playlist\n**Currently:**\n[${queue.currentTrack.cleanTitle}](${queue.currentTrack.url}) [${queue.currentTrack.raw.live ? `**\`${emoji.normalredcircle} Live\`**` : queue.currentTrack.duration}]\n\n**Next:**\n${queue.tracks.size === 0 ? 'No songs' : tracks.slice(page * 20, (page + 1) * 20).join('\n')}`,
                 footer: {
                     text: `Page ${page + 1}/${totalPages}${queue.tracks.size > 0 ? ` • ${queue.tracks.size} ${queue.tracks.size === 1 ? 'song' : 'songs'}` : ''}`
                 },

@@ -70,7 +70,7 @@ require('dotenv').config({ path: './config/.env' });
 			streamOptions: {
 				highWaterMark: 2 * 1024 * 1024
 			}
-		});	
+		});
 		await player.extractors.loadDefault(ext => ext !== 'YouTubeExtractor');
 		logger.info('All extractors loaded');
 
