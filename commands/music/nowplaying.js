@@ -12,7 +12,7 @@ module.exports = {
     async execute(_client, message) {
         const queue = useQueue(message.guild.id);
 
-        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
+        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 
         const progressbar = queue.node.createProgressBar({ timecodes: false, length: 13, leftChar: '[▬](https://top.gg/bot/1210159317119008819)' });
         const status = queue.node.isPaused() ? '▶️' : '⏸️';

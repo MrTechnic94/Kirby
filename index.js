@@ -68,7 +68,6 @@ require('dotenv').config({ path: './config/.env' });
 		await player.extractors.register(YoutubeiExtractor, {
 			authentication: process.env.YT_AUTHENTICATION,
 			streamOptions: {
-				useClient: 'iOS',
 				highWaterMark: 2 * 1024 * 1024
 			}
 		});

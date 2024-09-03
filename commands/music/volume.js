@@ -15,7 +15,7 @@ module.exports = {
 
         const queue = useQueue(message.guild.id);
 
-        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.queue_error] });
+        if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 
         const vol = parseInt(args[0]);
 
