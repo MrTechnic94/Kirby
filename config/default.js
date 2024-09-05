@@ -60,7 +60,7 @@ module.exports.emoji = {
     nextsong:         '\`⏭️\`',
     question:         '\`❓\`',
     scroll:           '\`📜\`',
-    normalredcircle:     '🔴'
+    normalredcircle:  '🔴'
 };
 
 // Other settings
