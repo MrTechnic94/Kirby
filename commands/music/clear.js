@@ -15,7 +15,7 @@ module.exports = {
 
         const queue = useQueue(message.guild.id);
 
-        if (!queue?.isPlaying() || !queue.tracks.at(0)) return message.channel.send({ embeds: [errorEmbeds.empty_empty_queue_error] });
+        if (!queue?.isPlaying() || !queue.tracks.at(0)) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 
         queue.tracks.clear();
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.dash} **Playlist has been cleared**` })] });
