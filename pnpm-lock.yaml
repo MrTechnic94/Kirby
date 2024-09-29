@@ -15,11 +15,11 @@ importers:
         specifier: ^6.7.1
         version: 6.7.1(@discord-player/extractor@4.5.1)
       discord-player-youtubei:
-        specifier: ^1.3.1
-        version: 1.3.1
+        specifier: ^1.3.2
+        version: 1.3.2
       discord.js:
-        specifier: ^14.16.2
-        version: 14.16.2
+        specifier: ^14.16.3
+        version: 14.16.3
       dotenv:
         specifier: ^16.4.5
         version: 16.4.5
@@ -47,10 +47,13 @@ importers:
         specifier: 8.57.0
         version: 8.57.0
       nodemon:
-        specifier: ^3.1.5
-        version: 3.1.5
+        specifier: ^3.1.7
+        version: 3.1.7
 
 packages:
+
+  '@bufbuild/protobuf@2.1.0':
+    resolution: {integrity: sha512-+2Mx67Y3skJ4NCD/qNSdBJNWtu6x6Qr53jeNg+QcwiL6mt0wK+3jwHH2x1p7xaYH6Ve2JKOVn0OxU35WsmqI9A==}
 
   '@discord-player/equalizer@0.2.3':
     resolution: {integrity: sha512-71UAepYMbHTg2QQLXQAgyuXYHrgAYpJDxjg9dRWfTUNf+zfOAlyJEiRRk/WFhQyGu6m23iLR/H/JxgF4AW8Csg==}
@@ -177,8 +180,8 @@ packages:
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
 
-  '@types/node@22.5.5':
-    resolution: {integrity: sha512-Xjs4y5UPO/CLdzpgR6GirZJx36yScjh73+2NlLlkFRSoQN8B0DpfXPdZGnvVmLRLOsqDpOfTNv7D9trgGhmOIA==}
+  '@types/node@22.7.4':
+    resolution: {integrity: sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==}
 
   '@types/ws@8.5.12':
     resolution: {integrity: sha512-3tPRkv1EtkDpzlgyKyI8pGsGZAGPEaXeu0DOj5DI25Ja91bdAYddYHbADRYVrZMRbfW+1l5YwXVDKohDJNQxkQ==}
@@ -400,14 +403,17 @@ packages:
   discord-api-types@0.37.100:
     resolution: {integrity: sha512-a8zvUI0GYYwDtScfRd/TtaNBDTXwP5DiDVX7K5OmE+DRT57gBqKnwtOC5Ol8z0mRW8KQfETIgiB8U0YZ9NXiCA==}
 
+  discord-api-types@0.37.101:
+    resolution: {integrity: sha512-2wizd94t7G3A8U5Phr3AiuL4gSvhqistDwWnlk1VLTit8BI1jWUncFqFQNdPbHqS3661+Nx/iEyIwtVjPuBP3w==}
+
   discord-api-types@0.37.83:
     resolution: {integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA==}
 
   discord-api-types@0.37.97:
     resolution: {integrity: sha512-No1BXPcVkyVD4ZVmbNgDKaBoqgeQ+FJpzZ8wqHkfmBnTZig1FcH3iPPersiK1TUIAzgClh2IvOuVUYfcWLQAOA==}
 
-  discord-player-youtubei@1.3.1:
-    resolution: {integrity: sha512-0JtWAux1SKBMG543PktNKrsydBLBarOvPn9dsu1xNfXQYbUSglOZgGRjcKxK6MgGj5MluSEer5QXE/UJYseIJg==}
+  discord-player-youtubei@1.3.2:
+    resolution: {integrity: sha512-NtKtLiR9HMYfTDXYvBeQCE+k3eegjB+ttaBq7gYdldIghBZ4fYHb0ERsAcY6lN4bQyAq0DaPFRIRbyk9Pi0TSg==}
     hasBin: true
 
   discord-player@6.7.1:
@@ -419,8 +425,8 @@ packages:
     resolution: {integrity: sha512-9DWY5/BLPXeldVwPr8/ggGjggTYOTw77aGQc3+4n5K54bRbbiJ9DUJc+mJzDiSLoHN3f286eRGACJYtrUu27xA==}
     engines: {node: '>=16.9.0'}
 
-  discord.js@14.16.2:
-    resolution: {integrity: sha512-VGNi9WE2dZIxYM8/r/iatQQ+3LT8STW4hhczJOwm+DBeHq66vsKDCk8trChNCB01sMO9crslYuEMeZl2d7r3xw==}
+  discord.js@14.16.3:
+    resolution: {integrity: sha512-EPCWE9OkA9DnFFNrO7Kl1WHHDYFXu3CNVFJg63bfU7hVtjZGyhShwZtSBImINQRWxWP2tgo2XI+QhdXx28r0aA==}
     engines: {node: '>=18'}
 
   doctrine@3.0.0:
@@ -939,8 +945,8 @@ packages:
   node-html-parser@6.1.13:
     resolution: {integrity: sha512-qIsTMOY4C/dAa5Q5vsobRpOOvPfC4pB61UVW2uSwZNUp0QU/jCekTal1vMmbO0DgdHeLUJpv/ARmDqErVxA3Sg==}
 
-  nodemon@3.1.5:
-    resolution: {integrity: sha512-V5UtfYc7hjFD4SI3EzD5TR8ChAHEZ+Ns7Z5fBk8fAbTVAj+q3G+w7sHJrHxXBkVn6ApLVTljau8wfHwqmGUjMw==}
+  nodemon@3.1.7:
+    resolution: {integrity: sha512-hLj7fuMow6f0lbB0cD14Lz2xNjwsyruH251Pk4t/yIitCFJbmY1myuLlHm/q06aST4jg6EgAh74PIBBrRqpVAQ==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -1431,10 +1437,12 @@ packages:
   youtube-sr@4.3.11:
     resolution: {integrity: sha512-3oHiS2x7PpMiDRW7Cq8nz1bkAIBOJHoOwkPl/oncM/+A9/3xxMDgMLGW2dsBEP1DHFyRXYTVABgfbdwHF8sXXQ==}
 
-  youtubei.js@10.4.0:
-    resolution: {integrity: sha512-FZahkkg5ROyH/FgJ4czy/xDNkqHbJTCUQzumQlnR+2Q7m6HaWghAFWWJUTcexemGuu7t/5EuyQz98eBgKQRMog==}
+  youtubei.js@10.5.0:
+    resolution: {integrity: sha512-iyA+VF28c15tCCKH9ExM2RKC3zYiHzA/eixGlJ3vERANkuI+xYKzAZ4vtOhmyqwrAddu88R/DkzEsmpph5NWjg==}
 
 snapshots:
+
+  '@bufbuild/protobuf@2.1.0': {}
 
   '@discord-player/equalizer@0.2.3': {}
 
@@ -1626,13 +1634,13 @@ snapshots:
   '@tootallnate/quickjs-emscripten@0.23.0':
     optional: true
 
-  '@types/node@22.5.5':
+  '@types/node@22.7.4':
     dependencies:
       undici-types: 6.19.8
 
   '@types/ws@8.5.12':
     dependencies:
-      '@types/node': 22.5.5
+      '@types/node': 22.7.4
 
   '@ungap/structured-clone@1.2.0': {}
 
@@ -1846,14 +1854,16 @@ snapshots:
 
   discord-api-types@0.37.100: {}
 
+  discord-api-types@0.37.101: {}
+
   discord-api-types@0.37.83: {}
 
   discord-api-types@0.37.97: {}
 
-  discord-player-youtubei@1.3.1:
+  discord-player-youtubei@1.3.2:
     dependencies:
       tiny-typed-emitter: 2.1.0
-      youtubei.js: 10.4.0
+      youtubei.js: 10.5.0
 
   discord-player@6.7.1(@discord-player/extractor@4.5.1):
     dependencies:
@@ -1877,7 +1887,7 @@ snapshots:
       '@discord-player/ffmpeg': 0.1.0
       '@discord-player/opus': 0.1.2
       '@types/ws': 8.5.12
-      discord-api-types: 0.37.100
+      discord-api-types: 0.37.101
       prism-media: 1.3.5
       tslib: 2.7.0
       ws: 8.18.0
@@ -1889,7 +1899,7 @@ snapshots:
       - opusscript
       - utf-8-validate
 
-  discord.js@14.16.2:
+  discord.js@14.16.3:
     dependencies:
       '@discordjs/builders': 1.9.0
       '@discordjs/collection': 1.5.3
@@ -1898,7 +1908,7 @@ snapshots:
       '@discordjs/util': 1.1.1
       '@discordjs/ws': 1.1.1
       '@sapphire/snowflake': 3.5.3
-      discord-api-types: 0.37.97
+      discord-api-types: 0.37.100
       fast-deep-equal: 3.1.3
       lodash.snakecase: 4.1.1
       tslib: 2.7.0
@@ -2452,7 +2462,7 @@ snapshots:
       css-select: 5.1.0
       he: 1.2.0
 
-  nodemon@3.1.5:
+  nodemon@3.1.7:
     dependencies:
       chokidar: 3.6.0
       debug: 4.3.7(supports-color@5.5.0)
@@ -3000,8 +3010,9 @@ snapshots:
 
   youtube-sr@4.3.11: {}
 
-  youtubei.js@10.4.0:
+  youtubei.js@10.5.0:
     dependencies:
+      '@bufbuild/protobuf': 2.1.0
       jintr: 2.1.1
       tslib: 2.7.0
       undici: 5.28.4
