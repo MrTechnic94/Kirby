@@ -13,12 +13,12 @@ module.exports = {
         try {
             const { body } = await request('https://bible-api.com/?random=verse', { timeout: 1000 });
 
-            const quoteData = await body.json();
+            const { reference, text } = await body.json();
 
             message.channel.send({
                 embeds: [
                     createEmbed({
-                        description: `### ${emoji.scroll} ${quoteData.reference}\n${quoteData.text}`
+                        description: `### ${emoji.scroll} ${reference}\n${text}`
                     }),
                 ],
             });
