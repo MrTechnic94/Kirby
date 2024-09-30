@@ -1,5 +1,6 @@
 'use strict';
 
+const logger = require('../../utils/consoleLogger');
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
 const { emoji } = require('../../config/default');
@@ -10,18 +11,19 @@ module.exports = {
     cooldown: 2,
     async execute(_client, message) {
         try {
-            const { body } = await request('https://labs.bible.org/api/?passage=random&type=json', { timeout: 1000 });
+            const { body } = await request('https://bible-api.com/?random=verse', { timeout: 1000 });
 
-            const [quoteData] = await body.json();
+            const { reference, text } = await body.json();
 
             message.channel.send({
                 embeds: [
                     createEmbed({
-                        description: `### ${emoji.scroll} ${quoteData.bookname} ${quoteData.chapter}:${quoteData.verse}\n${quoteData.text}`
+                        description: `### ${emoji.scroll} ${reference}\n${text}`
                     }),
                 ],
             });
-        } catch {
+        } catch (err) {
+            logger.error(err);
             message.channel.send({ embeds: [errorEmbeds.catch_error] });
         }
     }

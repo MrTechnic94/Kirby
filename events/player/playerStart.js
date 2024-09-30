@@ -7,7 +7,7 @@ module.exports = {
 	name: 'playerStart',
 	async execute(_client, queue, track) {
 		const requester = track.requestedBy ?? '**`unknown`**';
-		const duration = track.raw.live ? `**\`${emoji.regredcircle} Live\`**` : `**\`${track.duration}\`**`;
+		const duration = track.raw.live ? `**\`${emoji.normalredcircle} Live\`**` : `**\`${track.duration}\`**`;
 
 		queue.npmessage = await queue.metadata.send({
 			embeds: [

@@ -20,7 +20,7 @@ module.exports = {
         if (queue.filters.ffmpeg.getFiltersEnabled().length >= otherPlayerOptions.maxFiltersEnabled && queue.filters.ffmpeg.isDisabled('bassboost')) return message.channel.send({ embeds: [errorEmbeds.max_filters_enabled_error] });
 
         const mode = queue.filters.ffmpeg.isEnabled('bassboost') ? 'disabled' : 'enabled';
-        
+
         await queue.filters.ffmpeg.toggle(['bassboost', 'normalizer']);
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **Bassboost has been \`${mode}\`**` })] });
     },

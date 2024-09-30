@@ -20,7 +20,7 @@ module.exports = {
         if (queue.filters.ffmpeg.getFiltersEnabled().length >= otherPlayerOptions.maxFiltersEnabled && queue.filters.ffmpeg.isDisabled('karaoke')) return message.channel.send({ embeds: [errorEmbeds.max_filters_enabled_error] });
 
         const mode = queue.filters.ffmpeg.isEnabled('karaoke') ? 'disabled' : 'enabled';
-        
+
         await queue.filters.ffmpeg.toggle(['karaoke', 'normalizer']);
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **Karaoke has been \`${mode}\`**` })] });
     },

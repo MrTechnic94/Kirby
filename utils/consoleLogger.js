@@ -2,18 +2,19 @@
 
 const pino = require('pino');
 
-let pinoPrettyAvailable = false;
+let isPinoPretty;
 
 try {
     require.resolve('pino-pretty');
-    pinoPrettyAvailable = true;
+    isPinoPretty = true;
 } catch {
+    isPinoPretty = false;
     console.warn('To achieve better formatting, install the pino-pretty module');
 }
 
 let logger;
 
-if (pinoPrettyAvailable) {
+if (isPinoPretty) {
     logger = pino({
         level: 'debug',
         transport: {

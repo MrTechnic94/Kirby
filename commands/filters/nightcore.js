@@ -20,7 +20,7 @@ module.exports = {
         if (queue.filters.ffmpeg.getFiltersEnabled().length >= otherPlayerOptions.maxFiltersEnabled && queue.filters.ffmpeg.isDisabled('nightcore')) return message.channel.send({ embeds: [errorEmbeds.max_filters_enabled_error] });
 
         const mode = queue.filters.ffmpeg.isEnabled('nightcore') ? 'disabled' : 'enabled';
-        
+
         await queue.filters.ffmpeg.toggle(['nightcore', 'normalizer']);
         message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **Nightcore has been \`${mode}\`**` })] });
     },

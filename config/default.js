@@ -16,7 +16,7 @@ module.exports.clientOptions = {
     intents:                   33409
 };
 
-// Discord-player client player settings 
+// Discord-player client player settings
 module.exports.clientPlayerOptions = {
     skipFFmpeg:        true,
     maxFiltersEnabled: 1
@@ -60,7 +60,7 @@ module.exports.emoji = {
     nextsong:         '\`⏭️\`',
     question:         '\`❓\`',
     scroll:           '\`📜\`',
-    regredcircle:     '🔴'
+    normalredcircle:  '🔴'
 };
 
 // Other settings

@@ -18,7 +18,7 @@ module.exports = {
         const status = queue.node.isPaused() ? '▶️' : '⏸️';
         const requester = queue.currentTrack.requestedBy ?? '**`unknown`**';
         const author = queue.currentTrack.author ?? 'unknown';
-        const duration = queue.currentTrack.raw.live ? `**Progress bar is not visible because it is a \`${emoji.regredcircle} Live\`**` : `\n${status} | ${progressbar} ${queue.node.getTimestamp().current.label} / ${queue.currentTrack.duration}`;
+        const duration = queue.currentTrack.raw.live ? `**Progress bar is not visible because it is a \`${emoji.normalredcircle} Live\`**` : `\n${status} | ${progressbar} ${queue.node.getTimestamp().current.label} / ${queue.currentTrack.duration}`;
 
         message.channel.send({
             embeds: [
