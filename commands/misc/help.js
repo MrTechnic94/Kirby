@@ -1,9 +1,9 @@
 'use strict';
 
 const redis = require('../../utils/redis');
+const { emoji } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const { emoji } = require('../../config/default');
 
 module.exports = {
     name: 'help',
@@ -19,7 +19,7 @@ module.exports = {
                 { name: 'leave', description: 'Bot leaves channel' },
                 { name: 'volume [percentage]', description: 'Changes volume' },
                 { name: 'clear', description: 'Clears current playlist' },
-                { name: 'play <title | link>', description: 'Plays selected song' },
+                { name: 'play <title | url>', description: 'Plays selected song' },
                 { name: 'loop [off | track | playlist]', description: 'Enables or disables looping' },
                 { name: 'skip', description: 'Starts a vote to skip song' },
                 { name: 'forceskip', description: 'Skips current song' },
@@ -39,7 +39,7 @@ module.exports = {
                 { name: 'replay', description: 'Adds current song to beginning of playlist' }
             ],
             general: [
-                { name: 'help', description: 'Kirby bot help command' },
+                { name: 'help', description: 'Kirby help command' },
                 { name: 'debug', description: 'Shows information about bot' },
                 { name: 'prefix <prefix>', description: 'Changes server prefix' },
                 { name: 'prefix <remove>', description: 'Sets server prefix to default' },
