@@ -8,7 +8,8 @@
     "pm2": "npx pm2 start index.js --name kirby -- --color && npx pm2 logs",
     "pm2:default": "pm2 start index.js --name kirby -- --color && pm2 logs",
     "update:all": "corepack use pnpm@latest && pnpm update",
-    "nodemon": "nodemon index.js"
+    "nodemon": "nodemon index.js",
+    "lint": "eslint ."
   },
   "author": "MrTechnic",
   "license": "UNLICENSED",
@@ -22,7 +23,7 @@
     "ioredis": "^5.4.1",
     "mediaplex": "^0.0.9",
     "pino": "^9.4.0",
-    "undici": "^6.19.8"
+    "undici": "^6.20.0"
   },
   "optionalDependencies": {
     "pino-pretty": "^11.2.2",
@@ -44,5 +45,5 @@
     "node": ">=18.0.0",
     "pnpm": ">=9.0.4"
   },
-  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b"
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
 }

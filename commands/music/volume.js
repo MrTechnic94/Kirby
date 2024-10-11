@@ -27,16 +27,18 @@ module.exports = {
 
         if (queue.node.volume === vol) return message.channel.send({ embeds: [errorEmbeds.already_volume_error] });
 
+        queue.node.setVolume(vol);
+
         if (vol === 0) {
             queue.node.pause();
-            queue.node.setVolume(vol);
+            // queue.node.setVolume(vol);
         } else {
             queue.node.resume();
         }
 
         const volume_emoji = vol === 0 ? emoji.mute : vol >= 51 ? emoji.loudsound : emoji.sound;
 
-        queue.node.setVolume(vol);
+        // queue.node.setVolume(vol);
         message.channel.send({ embeds: [createEmbed({ description: `${volume_emoji} **Volume set to \`${vol}%\`**` })] });
     },
 };
