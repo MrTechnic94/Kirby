@@ -1,7 +1,7 @@
 'use strict';
 
 const { createEmbed } = require('./embedCreator');
-const { embedOptions, otherPlayerOptions, emoji } = require('../config/default');
+const { embedOptions, clientPlayerOptions, emoji } = require('../config/default');
 
 // Variable containing messages
 const messages = {
@@ -37,7 +37,7 @@ const messages = {
     player_error: 'Player error occurred',
     catch_error: 'An unexpected error occurred',
     filters_error: 'No filter is enabled',
-    max_filters_enabled_error: `Only **${otherPlayerOptions.maxFiltersEnabled}** filter can be enabled at the same time`,
+    max_filters_enabled_error: `Only **${clientPlayerOptions.maxFiltersEnabled}** filter can be enabled at the same time`,
     shuffle_error: 'At least 3 songs are required in playlist',
     full_channel_error: 'Voice channel is full',
     same_move_error: 'Cannot move song to the same place',

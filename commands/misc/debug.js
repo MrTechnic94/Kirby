@@ -15,12 +15,12 @@ module.exports = {
         const system = os.platform();
         const cpuUsage = os.loadavg()[0];
         const memUsage = (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(0);
-        const ping = client.ws.ping;
+        const botPing = client.ws.ping;
 
         message.channel.send({
             embeds: [
                 createEmbed({
-                    description: `### ${emoji.disk} Debug\n\`\`\`Shard :: ${message.guild.shardId}\nPing :: ${ping}ms\nUptime :: ${formattedTime}\nSystem :: ${system}\nCpu usage :: ${cpuUsage}%\nRam usage :: ${memUsage}mb\nGuids count :: ${client.guilds.cache.size}\nActive connections :: ${player.generateStatistics().queues.length}\`\`\``
+                    description: `### ${emoji.disk} Debug\n\`\`\`Shard :: ${message.guild.shardId}\nPing :: ${botPing}ms\nUptime :: ${formattedTime}\nSystem :: ${system}\nCpu usage :: ${cpuUsage}%\nRam usage :: ${memUsage}mb\nGuids count :: ${client.guilds.cache.size}\nActive connections :: ${player.generateStatistics().queues.length}\`\`\``
                 }),
             ],
         });
