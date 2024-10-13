@@ -40,8 +40,8 @@ require('dotenv').config({ path: './config/.env' });
 			}]
 		},
 		allowedMentions: {
-			parse: true,
-			repliedUser: ['users', 'roles']
+			repliedUser: true,
+			parse: ['users', 'roles']
 		}
 	});
 

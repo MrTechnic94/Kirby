@@ -42,9 +42,6 @@ module.exports = (client) => {
           }
         });
       }
-
-      // Checking if command is owner only
-      if (command.ownerOnly === true) command.ownerOnly = true;
     }
   });
 };

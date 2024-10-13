@@ -30,11 +30,12 @@ module.exports = {
 		if (message.author.bot || !message.guild) return;
 
 		// Checking bot permissions
-		const missingPermissions = botPermissions.filter(permission => !message.guild.members.me.permissions.has(permission.name));
+		const missingPermissions = botPermissions
+			.filter(permission => !message.guild.members.me.permissions.has(permission.name))
+			.map(permission => permission.label);
 
 		if (missingPermissions.length > 0) {
-			const missingPermissionNames = missingPermissions.map(permission => permission.label).join('\n');
-			return message.channel.send(`${emoji.crossmark} **I do not have required permissions:\n\`\`\`${missingPermissionNames}\`\`\`**`).catch(() => null);
+			return message.channel.send(`${emoji.crossmark} **I do not have required permissions:\n\`\`\`${missingPermissions.join('\n')}\`\`\`**`).catch(() => null);
 		}
 
 		const guildData = await redis.hgetall(message.guild.id);
@@ -63,20 +64,27 @@ module.exports = {
 
 		// Checking if command has a cooldown
 		const now = Date.now();
-		if (cmd.cooldown && cooldowns.has(cmd.name)) {
-			const remainingTime = cooldowns.get(cmd.name) - now;
+		const cooldownTime = cmd.cooldown ? cmd.cooldown * 1000 : 0;
 
-			if (remainingTime > 0) {
-				const shortenedTime = (remainingTime / 1000).toFixed(1);
-				return message.channel.send({ embeds: [createEmbed({ description: `### ${emoji.crossmark} Something went wrong!\nCooldown is still active, try again in **${shortenedTime}s**`, color: embedOptions.errorColor })] });
+		if (cooldowns.has(cmd.name)) {
+			const expirationTime = cooldowns.get(cmd.name);
+			if (now < expirationTime) {
+				const remainingTime = ((expirationTime - now) / 1000).toFixed(1);
+				return message.channel.send({
+					embeds: [
+						createEmbed({
+							description: `### ${emoji.crossmark} Something went wrong!\nCooldown is still active, try again in **${remainingTime}s**`,
+							color: embedOptions.errorColor,
+						})
+					],
+				});
 			}
 		}
 
-		// Setting a new cooldown expiration time
-		const cooldownTime = cmd.cooldown * 1000;
-		const newExpirationTime = now + cooldownTime;
-		cooldowns.set(cmd.name, newExpirationTime);
-		setTimeout(() => cooldowns.delete(cmd.name), cooldownTime);
+		if (cooldownTime) {
+			cooldowns.set(cmd.name, now + cooldownTime);
+			setTimeout(() => cooldowns.delete(cmd.name), cooldownTime);
+		}
 
 		// Checking if user has required permissions
 		if (cmd.permission && !message.member.permissions.has(cmd.permission) || (cmd.ownerOnly && process.env.OWNER_ID !== message.author.id)) {

@@ -22,6 +22,6 @@ module.exports = {
         const mode = queue.filters.ffmpeg.isEnabled('bassboost_high') ? 'disabled' : 'enabled';
 
         await queue.filters.ffmpeg.toggle(['bassboost_high', 'normalizer']);
-        message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **High Bassboost has been \`${mode}\`**` })] });
+        message.channel.send({ embeds: [createEmbed({ description: `${emoji.checkmark} **Bassboost High has been \`${mode}\`**` })] });
     },
 };
