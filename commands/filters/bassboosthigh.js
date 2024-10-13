@@ -1,7 +1,7 @@
 'use strict';
 
 const errorEmbeds = require('../../utils/errorEmbeds');
-const { otherPlayerOptions, emoji, } = require('../../config/default');
+const { clientPlayerOptions, emoji, } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');
 const { useQueue } = require('discord-player');
 
@@ -17,7 +17,7 @@ module.exports = {
 
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 
-        if (queue.filters.ffmpeg.getFiltersEnabled().length >= otherPlayerOptions.maxFiltersEnabled && queue.filters.ffmpeg.isDisabled('bassboost_high')) return message.channel.send({ embeds: [errorEmbeds.max_filters_enabled_error] });
+        if (queue.filters.ffmpeg.getFiltersEnabled().length >= clientPlayerOptions.maxFiltersEnabled && queue.filters.ffmpeg.isDisabled('bassboost_high')) return message.channel.send({ embeds: [errorEmbeds.max_filters_enabled_error] });
 
         const mode = queue.filters.ffmpeg.isEnabled('bassboost_high') ? 'disabled' : 'enabled';
 
