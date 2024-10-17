@@ -57,7 +57,7 @@ module.exports = {
 
 		const args = message.content.slice(prefix.length).split(/ +/);
 		const command = args.shift();
-		const cmd = client.commands.get(command) ?? client.commands.get(client.aliases.get(command));
+		const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
 		// Checking if command exists
 		if (!cmd) return;
