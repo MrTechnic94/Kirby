@@ -63,6 +63,17 @@ module.exports.emoji = {
     normalredcircle:  '🔴'
 };
 
+// Music streaming services logos
+module.exports.logo = {
+    vimeo:        'https://i.imgur.com/K7RD58C.jpeg',
+    youtube:      'https://i.imgur.com/0MVewOC.jpeg',
+    spotify:      'https://i.imgur.com/VuQeR3a.jpeg',
+    soundcloud:   'https://i.imgur.com/BHyTDsh.jpeg',
+    applemusic:   'https://i.imgur.com/LATwFKM.jpeg',
+    attachment:   'https://i.imgur.com/FefoWMT.jpeg',
+    reverbnation: 'https://i.imgur.com/dD2Dvg8.jpeg'
+};
+
 // Other settings
 module.exports.embedOptions = {
     defaultColor: 0x6133FF,

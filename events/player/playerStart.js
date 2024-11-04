@@ -1,7 +1,7 @@
 'use strict';
 
 const { createEmbed } = require('../../utils/embedCreator');
-const { emoji } = require('../../config/default');
+const { emoji, logo } = require('../../config/default');
 
 module.exports = {
 	name: 'playerStart',
@@ -17,7 +17,7 @@ module.exports = {
 						{ name: '**Requested by**', value: `${requester}`, inline: true },
 						{ name: '**Duration**', value: duration, inline: true }
 					],
-					thumbnail: track.thumbnail
+					thumbnail: track.thumbnail || logo[track.source]
 				}),
 			],
 		});
