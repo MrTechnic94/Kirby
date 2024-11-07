@@ -13,7 +13,9 @@ module.exports.clientOptions = {
     messageCacheMaxSize:       25,
     messageSweepInterval:      43200,
     messageCacheLifetime:      21600,
-    intents:                   33409
+    intents:                   33409,
+    repliedUser:               true,
+    parse:                     ['users', 'roles']
 };
 
 // Discord-player client player settings

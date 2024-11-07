@@ -38,8 +38,8 @@ const { Player } = require('discord-player');
 			}]
 		},
 		allowedMentions: {
-			repliedUser: true,
-			parse: ['users', 'roles']
+			repliedUser: clientOptions.repliedUser,
+			parse: clientOptions.parse
 		}
 	});
 
