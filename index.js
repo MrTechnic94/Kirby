@@ -13,18 +13,16 @@
 
 'use strict';
 
+require('dotenv').config({ path: './config/.env' });
+const { startupChecker } = require('./utils/startupChecker');
+startupChecker();
 const logger = require('./utils/consoleLogger');
 const { botOptions, clientOptions, clientPlayerOptions } = require('./config/default');
-const { startupChecker } = require('./utils/startupChecker');
+const { YoutubeiExtractor } = require('discord-player-youtubei');
 const { Client } = require('discord.js');
 const { Player } = require('discord-player');
-const { YoutubeiExtractor } = require('discord-player-youtubei');
-require('dotenv').config({ path: './config/.env' });
 
 (async () => {
-	// Allows capturing errors and checking presence of required parameters
-	startupChecker();
-
 	// Initializing client with specified settings
 	const client = new Client({
 		restRequestTimeout: clientOptions.restRequestTimeout,
@@ -40,8 +38,8 @@ require('dotenv').config({ path: './config/.env' });
 			}]
 		},
 		allowedMentions: {
-			repliedUser: true,
-			parse: ['users', 'roles']
+			repliedUser: clientOptions.repliedUser,
+			parse: clientOptions.parse
 		}
 	});
 

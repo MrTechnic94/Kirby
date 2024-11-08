@@ -1,7 +1,6 @@
 'use strict';
 
 const logger = require('./consoleLogger');
-const { execSync } = require('node:child_process');
 
 // Function to check presence of required parameters in .env file
 function checkEnvVariables(variables) {
@@ -25,6 +24,8 @@ function checkNodeVersion() {
 
 // Checking presence of FFmpeg
 function checkFFmpeg() {
+    const { execSync } = require('node:child_process');
+
     let isFFmpegStatic;
 
     try {

@@ -57,7 +57,7 @@ module.exports = {
 
 		const args = message.content.slice(prefix.length).split(/ +/);
 		const command = args.shift();
-		const cmd = client.commands.get(command) ?? client.commands.get(client.aliases.get(command));
+		const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));
 
 		// Checking if command exists
 		if (!cmd) return;
@@ -65,23 +65,21 @@ module.exports = {
 		// Checking if command has a cooldown
 		const now = Date.now();
 		const cooldownTime = cmd.cooldown ? cmd.cooldown * 1000 : 0;
+		const expirationTime = cooldowns.get(cmd.name);
 
-		if (cooldowns.has(cmd.name)) {
-			const expirationTime = cooldowns.get(cmd.name);
-			if (now < expirationTime) {
-				const remainingTime = ((expirationTime - now) / 1000).toFixed(1);
-				return message.channel.send({
-					embeds: [
-						createEmbed({
-							description: `### ${emoji.crossmark} Something went wrong!\nCooldown is still active, try again in **${remainingTime}s**`,
-							color: embedOptions.errorColor,
-						})
-					],
-				});
-			}
+		if (now < expirationTime) {
+			const remainingTime = ((expirationTime - now) / 1000).toFixed(1);
+			return message.channel.send({
+				embeds: [
+					createEmbed({
+						description: `### ${emoji.crossmark} Something went wrong!\nCooldown is still active, try again in **${remainingTime}s**`,
+						color: embedOptions.errorColor
+					})
+				],
+			});
 		}
 
-		if (cooldownTime) {
+		if (cooldownTime > 0) {
 			cooldowns.set(cmd.name, now + cooldownTime);
 			setTimeout(() => cooldowns.delete(cmd.name), cooldownTime);
 		}

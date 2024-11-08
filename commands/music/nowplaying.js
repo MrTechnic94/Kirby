@@ -3,7 +3,7 @@
 const errorEmbeds = require('../../utils/errorEmbeds');
 const { createEmbed } = require('../../utils/embedCreator');
 const { useQueue } = require('discord-player');
-const { emoji } = require('../../config/default');
+const { emoji, logo } = require('../../config/default');
 
 module.exports = {
     name: 'nowplaying',
@@ -24,7 +24,7 @@ module.exports = {
             embeds: [
                 createEmbed({
                     description: `### ${emoji.zap} Now playing\n**Title: [${queue.currentTrack.cleanTitle}](${queue.currentTrack.url})**\n**Author: \`${author}\`**\n**Volume: \`${queue.node.volume}%\`**\n**Requested by:** ${requester}\n${duration}`,
-                    thumbnail: queue.currentTrack.thumbnail
+                    thumbnail: queue.currentTrack.thumbnail || logo[queue.currentTrack.source]
                 }),
             ],
         });

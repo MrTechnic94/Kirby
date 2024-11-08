@@ -1,25 +1,29 @@
 'use strict';
 
 const logger = require('../../utils/consoleLogger');
-const { emoji } = require('../../config/default');
+// const { emoji } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');
+const { useQueue } = require('discord-player');
 
 module.exports = {
     name: 'test',
     cooldown: 2,
     ownerOnly: true,
     async execute(_client, message) {
+
+        const queue = useQueue(message.guild.id);
+
         const embedData = {
             // url: 'https://example.com',
             // title: `${emoji.corssmark} Something is wrong!`,
             // image: 'https://example.com/image.png',
             // timestamp: Date.now(),
-            description: `### ${emoji.checkmark} Success!\nBot has left guild\n\nGuild name:\n \`\`\`Testowanko\`\`\`\n Guild id:\n \`\`\`720710829346914306\`\`\``,
+            description: `${queue.currentTrack.source}`,
             // fields: [
             //     { value: 'Wartość pola 1', inline: true },
             //     { name: 'Pole 2', value: 'Wartość pola 2', inline: true }
             // ],
-            // thumbnail: 'https://example.com/thumbnail.png',
+            thumbnail: queue.currentTrack.thumbnail,
             // author: {
             //     name: 'Autor',
             // },
@@ -30,6 +34,6 @@ module.exports = {
 
         const embed = createEmbed(embedData);
         message.channel.send({ embeds: [embed] });
-        logger.info(embed);
+        logger.info(embedData.thumbnail);
     },
 };

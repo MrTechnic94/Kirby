@@ -2,9 +2,9 @@
 
 const redis = require('../utils/redis');
 const logger = require('../utils/consoleLogger');
-const { join } = require('node:path');
 const { readdirSync } = require('node:fs');
 const { useMainPlayer } = require('discord-player');
+const { join } = require('node:path');
 
 module.exports = (client) => {
   const eventsDir = join(__dirname, '../events/');
