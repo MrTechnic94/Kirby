@@ -1,5 +1,2 @@
 config/.env
 node_modules/
-.eslintrc.json
-README.md
-logs/

@@ -9,7 +9,7 @@
     "pm2:default": "pm2 start index.js --name kirby -- --color && pm2 logs",
     "update:all": "corepack use pnpm@latest && pnpm update",
     "nodemon": "nodemon index.js",
-    "lint": "eslint ."
+    "lint": "biome lint ."
   },
   "author": "MrTechnic",
   "license": "UNLICENSED",
@@ -26,11 +26,11 @@
     "undici": "^6.20.1"
   },
   "optionalDependencies": {
-    "pino-pretty": "^11.3.0",
+    "pino-pretty": "^12.1.0",
     "pm2": "^5.4.2"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
+    "@biomejs/biome": "1.9.4",
     "nodemon": "^3.1.7"
   },
   "repository": {
