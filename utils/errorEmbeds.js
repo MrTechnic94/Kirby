@@ -49,6 +49,12 @@ const messages = {
 };
 
 // Generating messages
-const errorEmbeds = Object.fromEntries(Object.entries(messages).map(([key, description]) => [key, createEmbed({ description: `### ${emoji.crossmark} Something went wrong!\n${description}`, color: embedOptions.errorColor })]));
+const errorEmbeds = Object.entries(messages).reduce((embeds, [key, description]) => {
+    embeds[key] = createEmbed({
+        description: `### ${emoji.crossmark} Something went wrong!\n${description}`,
+        color: embedOptions.errorColor
+    });
+    return embeds;
+}, {});
 
 module.exports = errorEmbeds;
