@@ -1,7 +1,6 @@
 'use strict';
 
 const logger = require('../../utils/consoleLogger');
-const { useMainPlayer } = require('discord-player');
 
 module.exports = {
 	name: 'ready',
@@ -10,10 +9,9 @@ module.exports = {
 		// Displaying bot login information
 		logger.info(`Logged in as ${client.user.tag}`);
 
-		// If developer mode is enabled, generate a dependency report for discord-voip module
+		// Checking if the bot is in developer mode
 		if (global.isDev) {
-			const player = useMainPlayer();
-			logger.info(`Running in Dev Mode\n${player.scanDeps()}`);
+			logger.info('Running in Dev Mode');
 		}
 	},
 };
