@@ -23,7 +23,7 @@
     "ioredis": "^5.4.1",
     "mediaplex": "^0.0.9",
     "pino": "^9.5.0",
-    "undici": "^7.0.0"
+    "undici": "^7.1.0"
   },
   "optionalDependencies": {
     "pino-pretty": "^13.0.0",
