@@ -1337,8 +1337,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  systeminformation@5.23.5:
-    resolution: {integrity: sha512-PEpJwhRYxZgBCAlWZhWIgfMTjXLqfcaZ1pJsJn9snWNfBW/Z1YQg1mbIUSWrEV3ErAHF7l/OoVLQeaZDlPzkpA==}
+  systeminformation@5.23.17:
+    resolution: {integrity: sha512-jjcPB23YcoNN43Q+A0rPFsGMMSAW/Zeok8rMGko1DvO8b1SO7zizgAEVQ4lyJdlAuc6vTmqnkyMCDD3N9Uwksw==}
     engines: {node: '>=8.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
@@ -2743,7 +2743,7 @@ snapshots:
       async: 3.2.6
       debug: 4.3.7(supports-color@5.5.0)
       pidusage: 2.0.21
-      systeminformation: 5.23.5
+      systeminformation: 5.23.17
       tx2: 1.0.5
     transitivePeerDependencies:
       - supports-color
@@ -3025,7 +3025,7 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0:
     optional: true
 
-  systeminformation@5.23.5:
+  systeminformation@5.23.17:
     optional: true
 
   text-table@0.2.0: {}
