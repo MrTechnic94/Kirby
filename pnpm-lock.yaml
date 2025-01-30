@@ -15,8 +15,8 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0(@discord-player/extractor@7.1.0)(mediaplex@1.0.0)
       discord-player-youtubei:
-        specifier: ^1.4.2
-        version: 1.4.2
+        specifier: ^1.3.5
+        version: 1.3.5
       discord.js:
         specifier: ^14.17.3
         version: 14.17.3
@@ -24,8 +24,11 @@ importers:
         specifier: ^16.4.7
         version: 16.4.7
       ioredis:
-        specifier: ^5.4.2
-        version: 5.4.2
+        specifier: ^5.4.1
+        version: 5.4.1
+      mediaplex:
+        specifier: ^0.0.9
+        version: 0.0.9
       pino:
         specifier: ^9.6.0
         version: 9.6.0
@@ -102,8 +105,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@bufbuild/protobuf@2.2.3':
-    resolution: {integrity: sha512-tFQoXHJdkEOSwj5tRIZSPNUuXK3RaR7T1nUrPgbYX1pUbvqqaaZAsfo+NXBPsz5rZMSKVFrgK1WL8Q/MSLvprg==}
+  '@bufbuild/protobuf@2.2.2':
+    resolution: {integrity: sha512-UNtPCbrwrenpmrXuRwn9jYpPoweNXj8X5sMvYgsqYyaH8jQ6LfUJSk3dJLnBK+6sfYPrF4iAIo5sd5HQ+tg75A==}
+
+  '@derhuerst/http-basic@8.2.4':
+    resolution: {integrity: sha512-F9rL9k9Xjf5blCz8HsJRO4diy111cayL2vkY2XE4r4t3n0yPXVYy3KD3nJ1qbrSn9743UWSXH4IwuCa/HWlGFw==}
+    engines: {node: '>=6.0.0'}
 
   '@discord-player/equalizer@7.1.0':
     resolution: {integrity: sha512-bF5MRDDcm0BeZbTHMcG3UHdTZKHC7w21iEqrjt89KDzis6qz9oRsRWIG1w0NH3UYSCf1X3jdS/WiKdMqGHmmiA==}
@@ -694,11 +701,20 @@ packages:
     resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
     engines: {node: '>=0.10'}
 
-  discord-api-types@0.37.117:
-    resolution: {integrity: sha512-d+Z6RKd7v3q22lsil7yASucqMfVVV0s0XSqu3cw7kyHVXiDO/mAnqMzqma26IYnIm2mk3TlupYJDGrdL908ZKA==}
+  discord-api-types@0.37.100:
+    resolution: {integrity: sha512-a8zvUI0GYYwDtScfRd/TtaNBDTXwP5DiDVX7K5OmE+DRT57gBqKnwtOC5Ol8z0mRW8KQfETIgiB8U0YZ9NXiCA==}
 
-  discord-player-youtubei@1.4.2:
-    resolution: {integrity: sha512-LEE6rnqOVuLwdkAjQC0xc/J4xOmBm2o5UPEZBjSFA1xVthx3y3VbCp4Y83j//OO0LWa/XU5szOQ9LXytISQxcg==}
+  discord-api-types@0.37.105:
+    resolution: {integrity: sha512-TSNlLF5Q9vFLMeHjYskhmDj/zCQ4dFA+OLxQrHUypGW48gt8ttGaB+opCD9w3Zkq1otyoBoetrwaoDFZAFuGng==}
+
+  discord-api-types@0.37.83:
+    resolution: {integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA==}
+
+  discord-api-types@0.37.97:
+    resolution: {integrity: sha512-No1BXPcVkyVD4ZVmbNgDKaBoqgeQ+FJpzZ8wqHkfmBnTZig1FcH3iPPersiK1TUIAzgClh2IvOuVUYfcWLQAOA==}
+
+  discord-player-youtubei@1.3.5:
+    resolution: {integrity: sha512-yx7tExZUwR0MgtjZxFXmv5wVq8bYUALfzub0JiRCPcYkmo4aT6WHf2ZK1g/RGQ4nYuy6nud/zNIT0yoe1XuihQ==}
     hasBin: true
 
   discord-player@7.1.0:
@@ -961,11 +977,8 @@ packages:
   isomorphic-unfetch@4.0.2:
     resolution: {integrity: sha512-1Yd+CF/7al18/N2BDbsLBcp6RO3tucSW+jcLq24dqdX5MNbCNTw1z4BsGsp4zNmjr/Izm2cs/cEqZPp4kvWSCA==}
 
-  jackspeak@3.4.3:
-    resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
-
-  jintr@3.2.0:
-    resolution: {integrity: sha512-psD1yf05kMKDNsUdW1l5YhO59pHScQ6OIHHb8W5SKSM2dCOFPsqolmIuSHgVA8+3Dc47NJR181CXZ4alCAPTkA==}
+  jintr@3.0.2:
+    resolution: {integrity: sha512-5g2EBudeJFOopjAX4exAv5OCCW1DgUISfoioCsm1h9Q9HJ41LmnZ6J52PCsqBlQihsmp0VDuxreAVzM7yk5nFA==}
 
   joycon@3.1.1:
     resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
@@ -1733,8 +1746,11 @@ packages:
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  youtubei.js@13.0.0:
-    resolution: {integrity: sha512-b1QkN9bfgphK+5tI4qteSK54kNxmPhoedvMw0jl4uSn+L8gbDbJ4z52amNuYNcOdp4X/SI3JuUb+f5V0DPJ8Vw==}
+  youtube-sr@4.3.11:
+    resolution: {integrity: sha512-3oHiS2x7PpMiDRW7Cq8nz1bkAIBOJHoOwkPl/oncM/+A9/3xxMDgMLGW2dsBEP1DHFyRXYTVABgfbdwHF8sXXQ==}
+
+  youtubei.js@11.0.1:
+    resolution: {integrity: sha512-ZsbOd+5XF2Ofi3FrLMfYd+f9g9H8xswlouFhjhOqbwT68dMJtX6CRGsHNj5VTFCR/+L/865x1lnUlllB2dDDTA==}
 
 snapshots:
 
@@ -1773,7 +1789,15 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
 
-  '@bufbuild/protobuf@2.2.3': {}
+  '@bufbuild/protobuf@2.2.2': {}
+
+  '@derhuerst/http-basic@8.2.4':
+    dependencies:
+      caseless: 0.12.0
+      concat-stream: 2.0.0
+      http-response-object: 3.0.2
+      parse-cache-control: 1.0.1
+    optional: true
 
   '@discord-player/equalizer@7.1.0': {}
 
@@ -1801,7 +1825,7 @@ snapshots:
       '@discordjs/formatters': 0.6.0
       '@discordjs/util': 1.1.1
       '@sapphire/shapeshift': 4.0.0
-      discord-api-types: 0.37.117
+      discord-api-types: 0.37.97
       fast-deep-equal: 3.1.3
       ts-mixer: 6.0.4
       tslib: 2.8.1
@@ -1812,7 +1836,7 @@ snapshots:
 
   '@discordjs/formatters@0.6.0':
     dependencies:
-      discord-api-types: 0.37.117
+      discord-api-types: 0.37.97
 
   '@discordjs/rest@2.4.2':
     dependencies:
@@ -1821,7 +1845,7 @@ snapshots:
       '@sapphire/async-queue': 1.5.5
       '@sapphire/snowflake': 3.5.3
       '@vladfrangu/async_event_emitter': 2.4.6
-      discord-api-types: 0.37.117
+      discord-api-types: 0.37.97
       magic-bytes.js: 1.10.0
       tslib: 2.8.1
       undici: 6.19.8
@@ -1836,7 +1860,7 @@ snapshots:
       '@sapphire/async-queue': 1.5.5
       '@types/ws': 8.5.14
       '@vladfrangu/async_event_emitter': 2.4.6
-      discord-api-types: 0.37.117
+      discord-api-types: 0.37.83
       tslib: 2.8.1
       ws: 8.18.0
     transitivePeerDependencies:
@@ -2001,7 +2025,7 @@ snapshots:
 
   '@pm2/pm2-version-check@1.0.4':
     dependencies:
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.3.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -2093,7 +2117,18 @@ snapshots:
 
   acorn@8.14.0: {}
 
-  agent-base@7.1.3:
+  agent-base@6.0.2:
+    dependencies:
+      debug: 4.3.7(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+    optional: true
+
+  agent-base@7.1.1:
+    dependencies:
+      debug: 4.3.7(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
     optional: true
 
   amp-message@0.1.2:
@@ -2282,6 +2317,11 @@ snapshots:
     optionalDependencies:
       supports-color: 5.5.0
 
+  debug@4.4.0:
+    dependencies:
+      ms: 2.1.3
+    optional: true
+
   degenerator@5.0.1:
     dependencies:
       ast-types: 0.13.4
@@ -2291,13 +2331,19 @@ snapshots:
 
   denque@2.1.0: {}
 
-  discord-api-types@0.37.117: {}
+  discord-api-types@0.37.100: {}
 
-  discord-player-youtubei@1.4.2:
+  discord-api-types@0.37.105: {}
+
+  discord-api-types@0.37.83: {}
+
+  discord-api-types@0.37.97: {}
+
+  discord-player-youtubei@1.3.5:
     dependencies:
       tiny-typed-emitter: 2.1.0
-      undici: 7.3.0
-      youtubei.js: 13.0.0
+      undici: 6.21.0
+      youtubei.js: 11.0.1
 
   discord-player@7.1.0(@discord-player/extractor@7.1.0)(mediaplex@1.0.0):
     dependencies:
@@ -2344,7 +2390,7 @@ snapshots:
       '@discordjs/util': 1.1.1
       '@discordjs/ws': 1.2.0
       '@sapphire/snowflake': 3.5.3
-      discord-api-types: 0.37.117
+      discord-api-types: 0.37.100
       fast-deep-equal: 3.1.3
       lodash.snakecase: 4.1.1
       tslib: 2.8.1
@@ -2371,13 +2417,7 @@ snapshots:
       domelementtype: 2.3.0
       domhandler: 5.0.3
 
-  dotenv@16.4.7: {}
-
-  eastasianwidth@0.2.0: {}
-
-  emoji-regex@8.0.0: {}
-
-  emoji-regex@9.2.2: {}
+  dotenv@16.4.5: {}
 
   end-of-stream@1.4.4:
     dependencies:
@@ -2511,11 +2551,17 @@ snapshots:
   function-bind@1.1.2:
     optional: true
 
-  get-uri@6.0.4:
+  genius-lyrics@4.4.7:
+    dependencies:
+      node-html-parser: 6.1.13
+      undici: 6.21.0
+
+  get-uri@6.0.3:
     dependencies:
       basic-ftp: 5.0.5
       data-uri-to-buffer: 6.0.2
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.3.7(supports-color@5.5.0)
+      fs-extra: 11.2.0
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -2560,16 +2606,29 @@ snapshots:
 
   http-proxy-agent@7.0.2:
     dependencies:
-      agent-base: 7.1.3
-      debug: 4.4.0(supports-color@5.5.0)
+      agent-base: 7.1.1
+      debug: 4.3.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
 
   https-proxy-agent@7.0.6:
     dependencies:
-      agent-base: 7.1.3
-      debug: 4.4.0(supports-color@5.5.0)
+      '@types/node': 10.17.60
+    optional: true
+
+  https-proxy-agent@5.0.1:
+    dependencies:
+      agent-base: 6.0.2
+      debug: 4.3.7(supports-color@5.5.0)
+    transitivePeerDependencies:
+      - supports-color
+    optional: true
+
+  https-proxy-agent@7.0.5:
+    dependencies:
+      agent-base: 7.1.1
+      debug: 4.3.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -2634,13 +2693,7 @@ snapshots:
       node-fetch: 3.3.2
       unfetch: 5.0.0
 
-  jackspeak@3.4.3:
-    dependencies:
-      '@isaacs/cliui': 8.0.2
-    optionalDependencies:
-      '@pkgjs/parseargs': 0.11.0
-
-  jintr@3.2.0:
+  jintr@3.0.2:
     dependencies:
       acorn: 8.14.0
 
@@ -2865,9 +2918,9 @@ snapshots:
   pac-proxy-agent@7.1.0:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
-      agent-base: 7.1.3
-      debug: 4.4.0(supports-color@5.5.0)
-      get-uri: 6.0.4
+      agent-base: 7.1.1
+      debug: 4.3.7(supports-color@5.5.0)
+      get-uri: 6.0.3
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       pac-resolver: 7.0.1
@@ -3103,7 +3156,7 @@ snapshots:
 
   require-in-the-middle@5.2.0:
     dependencies:
-      debug: 4.4.0(supports-color@5.5.0)
+      debug: 4.3.7(supports-color@5.5.0)
       module-details-from-path: 1.0.3
       resolve: 1.22.10
     transitivePeerDependencies:
@@ -3196,8 +3249,8 @@ snapshots:
 
   socks-proxy-agent@8.0.5:
     dependencies:
-      agent-base: 7.1.3
-      debug: 4.4.0(supports-color@5.5.0)
+      agent-base: 7.1.1
+      debug: 4.3.7(supports-color@5.5.0)
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -3459,7 +3512,9 @@ snapshots:
   yallist@4.0.0:
     optional: true
 
-  youtubei.js@13.0.0:
+  youtube-sr@4.3.11: {}
+
+  youtubei.js@11.0.1:
     dependencies:
       '@bufbuild/protobuf': 2.2.3
       jintr: 3.2.0
