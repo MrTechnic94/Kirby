@@ -17,7 +17,7 @@ module.exports = {
 
         if (message.member?.voice.channelId !== message.guild.members.me?.voice.channelId) return message.channel.send({ embeds: [errorEmbeds.voice_error] });
 
-        const queue = useQueue(message.guild.id);
+        const queue = useQueue();
 
         queue ? queue.delete() : message.guild.members.me?.voice.disconnect();
 

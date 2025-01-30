@@ -15,7 +15,7 @@ module.exports = {
 
         if (message.guild.members.me?.voice.mute) return message.channel.send({ embeds: [errorEmbeds.muted_bot_error] });
 
-        const queue = useQueue(message.guild.id);
+        const queue = useQueue();
 
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 

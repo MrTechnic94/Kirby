@@ -10,7 +10,7 @@ module.exports = {
     aliases: ['config', 'cfg'],
     cooldown: 2,
     async execute(_client, message) {
-        const queue = useQueue(message.guild.id);
+        const queue = useQueue();
         const guildData = await redis.hgetall(message.guild.id);
         const prefix = guildData.prefix ?? process.env.PREFIX;
         const dj = guildData.djRoleId ? `<@&${guildData.djRoleId}>` : '**`none`**';

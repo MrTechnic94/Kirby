@@ -10,7 +10,7 @@ module.exports = {
     name: 'debug',
     cooldown: 2,
     async execute(client, message) {
-        const player = useMainPlayer(message.guild.id);
+        const player = useMainPlayer();
         const formattedTime = formatTime(client.uptime);
         const system = os.platform();
         const cpuUsage = os.loadavg()[0];

@@ -17,6 +17,7 @@ let logger;
 if (isPinoPretty) {
     logger = pino({
         level: 'debug',
+        base: { pid: undefined },
         transport: {
             target: 'pino-pretty',
             options: {
