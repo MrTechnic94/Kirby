@@ -5,7 +5,7 @@ const { readdirSync } = require('node:fs');
 const { join } = require('node:path');
 
 module.exports = (client) => {
-  const commandsDir = join(__dirname, '../commands/');
+  const commandsDir = join(__dirname, '../commands');
 
   readdirSync(commandsDir, { withFileTypes: true }).forEach((directory) => {
     if (!directory.isDirectory()) return;

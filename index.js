@@ -18,7 +18,8 @@ const { startupChecker } = require('./utils/startupChecker');
 startupChecker();
 const logger = require('./utils/consoleLogger');
 const { botOptions, clientOptions, clientPlayerOptions } = require('./config/default');
-const { YoutubeiExtractor } = require('discord-player-youtubei');
+const { DefaultExtractors } = require('@discord-player/extractor');
+// const { YoutubeiExtractor } = require('discord-player-youtubei');
 const { Client } = require('discord.js');
 const { Player } = require('discord-player');
 
@@ -63,17 +64,23 @@ require('./structures/events')(client);
 (async () => {
 	try {
 		// Loading extractors for discord-player
-		await player.extractors.register(YoutubeiExtractor, {
-			authentication: process.env.YT_AUTHENTICATION,
-			streamOptions: {
-				highWaterMark: 2 * 1024 * 1024
-			}
-		});
-		await player.extractors.loadDefault(ext => ext !== 'YouTubeExtractor');
+		// await player.extractors.register(YoutubeiExtractor, {
+		// 	authentication: process.env.YT_AUTHENTICATION,
+		// 	streamOptions: {
+		// 		highWaterMark: 2 * 1024 * 1024
+		// 	}
+		// });
+		await player.extractors.loadMulti(DefaultExtractors);
 		logger.info('All extractors loaded');
 
 		// Generate a dependency report for discord-voip module
 		logger.info(`\n${player.scanDeps()}`);
+
+		// Debug mode
+		if (process.env.DEBUG_MODE === 'true') {
+			player.on('debug', (msg) => logger.debug(msg));
+			player.events.on('debug', (_, msg) => logger.debug(msg));
+		};
 
 		// Logging bot into Discord
 		await client.login(token);

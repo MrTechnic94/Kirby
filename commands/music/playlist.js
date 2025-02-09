@@ -11,7 +11,7 @@ module.exports = {
     aliases: ['queue', 'q', 'list'],
     cooldown: 2,
     async execute(_client, message) {
-        const queue = useQueue(message.guild.id);
+        const queue = useQueue();
 
         if (!queue?.isPlaying()) return message.channel.send({ embeds: [errorEmbeds.empty_queue_error] });
 

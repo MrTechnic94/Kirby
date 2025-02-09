@@ -7,7 +7,7 @@ const { useMainPlayer } = require('discord-player');
 const { join } = require('node:path');
 
 module.exports = (client) => {
-  const eventsDir = join(__dirname, '../events/');
+  const eventsDir = join(__dirname, '../events');
 
   readdirSync(eventsDir, { withFileTypes: true }).forEach((directory) => {
     if (!directory.isDirectory()) return;
