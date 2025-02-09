@@ -15,8 +15,8 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0(@discord-player/extractor@7.1.0)(mediaplex@1.0.0)
       discord-player-youtubei:
-        specifier: ^1.3.5
-        version: 1.3.5
+        specifier: ^1.4.2
+        version: 1.4.2
       discord.js:
         specifier: ^14.17.3
         version: 14.17.3
@@ -710,11 +710,8 @@ packages:
   discord-api-types@0.37.83:
     resolution: {integrity: sha512-urGGYeWtWNYMKnYlZnOnDHm8fVRffQs3U0SpE8RHeiuLKb/u92APS8HoQnPTFbnXmY1vVnXjXO4dOxcAn3J+DA==}
 
-  discord-api-types@0.37.97:
-    resolution: {integrity: sha512-No1BXPcVkyVD4ZVmbNgDKaBoqgeQ+FJpzZ8wqHkfmBnTZig1FcH3iPPersiK1TUIAzgClh2IvOuVUYfcWLQAOA==}
-
-  discord-player-youtubei@1.3.5:
-    resolution: {integrity: sha512-yx7tExZUwR0MgtjZxFXmv5wVq8bYUALfzub0JiRCPcYkmo4aT6WHf2ZK1g/RGQ4nYuy6nud/zNIT0yoe1XuihQ==}
+  discord-player-youtubei@1.4.2:
+    resolution: {integrity: sha512-LEE6rnqOVuLwdkAjQC0xc/J4xOmBm2o5UPEZBjSFA1xVthx3y3VbCp4Y83j//OO0LWa/XU5szOQ9LXytISQxcg==}
     hasBin: true
 
   discord-player@7.1.0:
@@ -1749,8 +1746,8 @@ packages:
   youtube-sr@4.3.11:
     resolution: {integrity: sha512-3oHiS2x7PpMiDRW7Cq8nz1bkAIBOJHoOwkPl/oncM/+A9/3xxMDgMLGW2dsBEP1DHFyRXYTVABgfbdwHF8sXXQ==}
 
-  youtubei.js@11.0.1:
-    resolution: {integrity: sha512-ZsbOd+5XF2Ofi3FrLMfYd+f9g9H8xswlouFhjhOqbwT68dMJtX6CRGsHNj5VTFCR/+L/865x1lnUlllB2dDDTA==}
+  youtubei.js@13.0.0:
+    resolution: {integrity: sha512-b1QkN9bfgphK+5tI4qteSK54kNxmPhoedvMw0jl4uSn+L8gbDbJ4z52amNuYNcOdp4X/SI3JuUb+f5V0DPJ8Vw==}
 
 snapshots:
 
@@ -2339,11 +2336,11 @@ snapshots:
 
   discord-api-types@0.37.97: {}
 
-  discord-player-youtubei@1.3.5:
+  discord-player-youtubei@1.4.2:
     dependencies:
       tiny-typed-emitter: 2.1.0
-      undici: 6.21.0
-      youtubei.js: 11.0.1
+      undici: 7.3.0
+      youtubei.js: 13.0.0
 
   discord-player@7.1.0(@discord-player/extractor@7.1.0)(mediaplex@1.0.0):
     dependencies:
@@ -3514,7 +3511,8 @@ snapshots:
 
   youtube-sr@4.3.11: {}
 
-  youtubei.js@11.0.1:
+  youtubei.js@13.0.0:
+
     dependencies:
       '@bufbuild/protobuf': 2.2.3
       jintr: 3.2.0
