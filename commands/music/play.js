@@ -25,8 +25,7 @@ module.exports = {
         const player = useMainPlayer();
 
         const result = await player.search(args.join(' '), {
-            requestedBy: message.member,
-            fallbackSearchEngine: 'spotifySearch'
+            requestedBy: message.member
         });
 
         if (!result.hasTracks()) return message.channel.send({ embeds: [errorEmbeds.track_error] });

@@ -34,7 +34,7 @@ module.exports = {
                 { name: 'autoplay', description: 'Toggles autoplay' },
                 { name: 'remove <position>', description: 'Removes selected song from playlist' },
                 { name: 'jump <position>', description: 'Jumps to selected song in playlist' },
-                { name: 'move <from, to>', description: 'Moves a song to selected position' },
+                { name: 'move <from> <to>', description: 'Moves a song to selected position' },
                 { name: 'lyrics [title]', description: 'Displays lyrics for current or selected song' },
                 { name: 'replay', description: 'Adds current song to beginning of playlist' }
             ],

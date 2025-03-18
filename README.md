@@ -1,3 +1,5 @@
+<h1 align="center">✝️ JESUS IS KING</h1>
+
 # 🤖 Kirby
 
 Kirby is a simple yet powerful 24/7 music bot for Discord, offering continuous music streaming to keep your server lively and entertained.

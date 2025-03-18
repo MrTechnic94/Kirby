@@ -6,6 +6,7 @@ const errorEmbeds = require('../../utils/errorEmbeds');
 const { embedOptions, emoji } = require('../../config/default');
 const { createEmbed } = require('../../utils/embedCreator');
 const { PermissionsBitField } = require('discord.js');
+const { useMainPlayer } = require('discord-player');
 
 // Map storing cooldown expiration times for commands
 const cooldowns = new Map();
@@ -94,9 +95,11 @@ module.exports = {
 			return message.channel.send({ embeds: [errorEmbeds.dj_permission_error] });
 		}
 
+		const player = useMainPlayer();
+
 		// Captures and displays command errors
 		try {
-			await cmd.execute(client, message, args);
+			await player.context.provide({ guild: message.guild }, () => cmd.execute(client, message, args));
 		} catch (err) {
 			logger.error(`An error occurred while executing command ${cmd.name}!\n${err}`);
 		}
