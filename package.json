@@ -12,7 +12,7 @@
     "lint": "biome lint ."
   },
   "author": "MrTechnic",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@discord-player/extractor": "^7.1.0",
